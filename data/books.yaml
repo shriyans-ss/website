@@ -1,0 +1,28 @@
+# Sample books - Add your favorite books here
+- title: "The Great Gatsby"
+  author: "F. Scott Fitzgerald"
+  description: "A classic American novel that explores themes of wealth, love, and the American Dream."
+  genre: "Fiction"
+  rating: 5
+  year: 1925
+
+- title: "To Kill a Mockingbird"
+  author: "Harper Lee"
+  description: "A powerful story about racial injustice and moral growth in the American South."
+  genre: "Fiction"
+  rating: 5
+  year: 1960
+
+- title: "1984"
+  author: "George Orwell"
+  description: "A dystopian novel exploring themes of totalitarianism and surveillance."
+  genre: "Science Fiction"
+  rating: 4
+  year: 1949
+
+- title: "The Catcher in the Rye"
+  author: "J.D. Salinger"
+  description: "A coming-of-age story that captures the voice of a teenage protagonist."
+  genre: "Fiction"
+  rating: 4
+  year: 1951

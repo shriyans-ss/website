@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Home - {{ site_author }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <h1>Welcome</h1>
+    <p class="section-intro">{{ site_description }}</p>
+    
+    <div class="grid">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">📚 My Books</h3>
+            </div>
+            <div class="card-body">
+                <p>Explore my favorite books and reading recommendations.</p>
+                <a href="books.html" class="btn">View Books</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">📝 Blog</h3>
+            </div>
+            <div class="card-body">
+                <p>Read my latest thoughts and articles.</p>
+                <a href="blog.html" class="btn">Read Blog</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">⚡ Interests</h3>
+            </div>
+            <div class="card-body">
+                <p>Discover what I'm passionate about.</p>
+                <a href="interests.html" class="btn">Explore</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,68 @@
+# Sample interests - Add your hobbies and interests here
+- title: "Software Development"
+  emoji: "💻"
+  description: "Creating elegant solutions to complex problems through code."
+  topics:
+    - Web Development
+    - Backend Architecture
+    - DevOps
+    - Cloud Computing
+  resources:
+    - name: "GitHub"
+      url: "https://github.com"
+    - name: "Stack Overflow"
+      url: "https://stackoverflow.com"
+
+- title: "Reading & Literature"
+  emoji: "📚"
+  description: "Exploring different worlds and perspectives through books."
+  topics:
+    - Fiction
+    - Philosophy
+    - Science
+    - History
+  resources:
+    - name: "Goodreads"
+      url: "https://goodreads.com"
+    - name: "Project Gutenberg"
+      url: "https://www.gutenberg.org"
+
+- title: "Travel"
+  emoji: "✈️"
+  description: "Discovering new cultures, cuisines, and landscapes around the world."
+  topics:
+    - Adventure Travel
+    - Cultural Exploration
+    - Photography
+    - Outdoor Activities
+  resources:
+    - name: "Travel Blog Tips"
+      url: "https://www.travelblogtips.com"
+
+- title: "Music"
+  emoji: "🎵"
+  description: "Appreciating diverse musical genres and artists."
+  topics:
+    - Jazz
+    - Classical
+    - Electronic
+    - Indie
+  resources:
+    - name: "Spotify"
+      url: "https://www.spotify.com"
+    - name: "Last.fm"
+      url: "https://www.last.fm"
+
+- title: "Cooking"
+  emoji: "🍳"
+  description: "Experimenting with different cuisines and recipes."
+  topics:
+    - Italian Cuisine
+    - Asian Cooking
+    - Baking
+    - Food Photography
+  resources:
+    - name: "AllRecipes"
+      url: "https://www.allrecipes.com"
+    - name: "Serious Eats"
+      url: "https://www.seriouseats.com"
