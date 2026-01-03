@@ -4,7 +4,7 @@
 
 ## Build Command
 ```bash
-python -m src.main
+python -m src
 ```
 
 ## Test Locally

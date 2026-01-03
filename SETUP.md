@@ -6,7 +6,7 @@ Welcome! Your modular personal website framework is ready. Here's what you have:
 
 ### 1. Build the Site
 ```bash
-python -m src.main
+python -m src
 ```
 
 ### 2. View Locally

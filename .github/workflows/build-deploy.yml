@@ -32,7 +32,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Generate static site
-        run: python -m src.main
+        run: python -m src
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2

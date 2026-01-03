@@ -53,7 +53,7 @@ website/
 
 3. Generate the site:
    ```bash
-   python src/main.py
+   python -m src
    ```
 
 4. Output will be in `output/` directory

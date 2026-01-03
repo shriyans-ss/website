@@ -11,7 +11,7 @@
 
 2. **Generate the site:**
    ```bash
-   python -m src.main
+   python -m src
    ```
 
 3. **View output:**
