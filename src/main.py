@@ -50,3 +50,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Support being run as a module
+if __name__ != "__main__":
+    # This allows the module to be run with: python -m src.main
+    main()
