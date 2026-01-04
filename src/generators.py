@@ -66,6 +66,17 @@ class PageGenerator:
         write_html_file(os.path.join(output_path, "books.html"), html)
         print(f"✓ Generated books.html ({len(books)} books)")
     
+    def generate_books_placeholder(self, output_path: str) -> None:
+        """
+        Generate a placeholder books page (used when books page is temporarily disabled).
+        
+        Args:
+            output_path: Path to output directory
+        """
+        html = self.render_template("books-placeholder.html")
+        write_html_file(os.path.join(output_path, "books.html"), html)
+        print("✓ Generated books.html (placeholder)")
+    
     def generate_blog_page(self, posts: List[Dict[str, Any]], output_path: str) -> None:
         """
         Generate the blog page.

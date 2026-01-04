@@ -21,10 +21,10 @@ def main():
     
     # Load data
     print("Loading data...")
-    books_data = load_yaml_file(os.path.join(DATA_DIR, "books.yaml"))
+    # books_data = load_yaml_file(os.path.join(DATA_DIR, "books.yaml"))  # TEMPORARILY DISABLED
     blog_data = load_yaml_file(os.path.join(DATA_DIR, "blog.yaml"))
     interests_data = load_yaml_file(os.path.join(DATA_DIR, "interests.yaml"))
-    print(f"   Loaded {len(books_data)} books, {len(blog_data)} posts, {len(interests_data)} interests\n")
+    print(f"   Loaded {len(blog_data)} posts, {len(interests_data)} interests\n")
     
     # Copy CSS file to output
     print("Copying static files...")
@@ -40,7 +40,7 @@ def main():
     # Generate pages
     print("Generating pages...")
     generator.generate_index(OUTPUT_DIR)
-    generator.generate_books_page(books_data, OUTPUT_DIR)
+    generator.generate_books_placeholder(OUTPUT_DIR)  # Books page temporarily replaced with placeholder
     generator.generate_blog_page(blog_data, OUTPUT_DIR)
     generator.generate_interests_page(interests_data, OUTPUT_DIR)
     
