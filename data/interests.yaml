@@ -1,68 +1,42 @@
-# Sample interests - Add your hobbies and interests here
-- title: "Software Development"
-  emoji: "💻"
-  description: "Creating elegant solutions to complex problems through code."
+# Interests - Update these to customize your interests
+- title: "Neuroscience"
+  emoji: "🧠"
+  description: "Understanding the structure and function of the nervous system and the biological basis of behavior and cognition."
   topics:
-    - Web Development
-    - Backend Architecture
-    - DevOps
-    - Cloud Computing
+    - Cognitive Neuroscience
+    - Neural Development
+    - Brain Imaging
+    - Neurotransmitters
   resources:
-    - name: "GitHub"
-      url: "https://github.com"
-    - name: "Stack Overflow"
-      url: "https://stackoverflow.com"
+    - name: "Nature Neuroscience"
+      url: "https://www.nature.com/neuro"
+    - name: "Allen Brain Atlas"
+      url: "https://alleninstitute.org"
 
-- title: "Reading & Literature"
-  emoji: "📚"
-  description: "Exploring different worlds and perspectives through books."
+- title: "Science Olympiad"
+  emoji: "🏆"
+  description: "Participating in competitive science events and building problem-solving skills across diverse scientific disciplines."
   topics:
-    - Fiction
-    - Philosophy
-    - Science
-    - History
+    - Experimental Design
+    - Biology Competitions
+    - Physics Events
+    - Chemistry Challenges
   resources:
-    - name: "Goodreads"
-      url: "https://goodreads.com"
-    - name: "Project Gutenberg"
-      url: "https://www.gutenberg.org"
+    - name: "Science Olympiad Official"
+      url: "https://www.soinc.org"
+    - name: "Science Olympiad Student Center"
+      url: "https://scioly.org"
 
-- title: "Travel"
-  emoji: "✈️"
-  description: "Discovering new cultures, cuisines, and landscapes around the world."
+- title: "Physics"
+  emoji: "⚛️"
+  description: "Exploring the fundamental laws of motion, energy, and matter that govern the universe."
   topics:
-    - Adventure Travel
-    - Cultural Exploration
-    - Photography
-    - Outdoor Activities
+    - Quantum Mechanics
+    - Thermodynamics
+    - Electromagnetism
+    - Astrophysics
   resources:
-    - name: "Travel Blog Tips"
-      url: "https://www.travelblogtips.com"
-
-- title: "Music"
-  emoji: "🎵"
-  description: "Appreciating diverse musical genres and artists."
-  topics:
-    - Jazz
-    - Classical
-    - Electronic
-    - Indie
-  resources:
-    - name: "Spotify"
-      url: "https://www.spotify.com"
-    - name: "Last.fm"
-      url: "https://www.last.fm"
-
-- title: "Cooking"
-  emoji: "🍳"
-  description: "Experimenting with different cuisines and recipes."
-  topics:
-    - Italian Cuisine
-    - Asian Cooking
-    - Baking
-    - Food Photography
-  resources:
-    - name: "AllRecipes"
-      url: "https://www.allrecipes.com"
-    - name: "Serious Eats"
-      url: "https://www.seriouseats.com"
+    - name: "Physics Stack Exchange"
+      url: "https://physics.stackexchange.com"
+    - name: "arXiv Physics"
+      url: "https://arxiv.org/list/physics/recent"
