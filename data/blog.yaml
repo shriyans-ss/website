@@ -1,7 +1,10 @@
-# Sample blog posts - Add your articles here
+# Blog posts - Add your articles here
+# Use 'link' for external URLs or internal page links
+# Use 'slug' (optional) for creating internal blog post pages
 - title: "Getting Started with Python"
   date: "January 1, 2026"
   excerpt: "A beginner's guide to learning Python programming and getting your first project up and running."
+  link: "https://example.com/python-guide"
   tags:
     - Python
     - Programming
@@ -10,6 +13,7 @@
 - title: "The Art of Web Design"
   date: "December 15, 2025"
   excerpt: "Exploring principles of effective web design and user experience in modern web applications."
+  link: "https://example.com/web-design"
   tags:
     - Web Design
     - UX
@@ -18,6 +22,7 @@
 - title: "Building Scalable Applications"
   date: "December 1, 2025"
   excerpt: "Best practices and patterns for designing applications that can grow with your needs."
+  link: "https://example.com/scalable-apps"
   tags:
     - Architecture
     - Backend
@@ -26,6 +31,7 @@
 - title: "Thoughts on Remote Work"
   date: "November 15, 2025"
   excerpt: "Reflections on the benefits and challenges of working remotely in the modern tech industry."
+  link: "https://example.com/remote-work"
   tags:
     - Work
     - Lifestyle

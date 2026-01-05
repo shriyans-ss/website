@@ -4,13 +4,17 @@
 
 {% block content %}
 <section class="section">
-    <h2>📝 Blog Posts</h2>
+    <h2>Blog Posts</h2>
     <p class="section-intro">My thoughts, learnings, and experiences.</p>
     
     {% for post in blog_posts %}
     <article class="card">
         <div class="card-header">
+            {% if post.link %}
+            <h3 class="card-title"><a href="{{ post.link }}" {% if post.link.startswith('http') %}target="_blank"{% endif %}>{{ post.title }}</a></h3>
+            {% else %}
             <h3 class="card-title">{{ post.title }}</h3>
+            {% endif %}
             {% if post.date %}
             <p class="card-subtitle">{{ post.date }}</p>
             {% endif %}
@@ -30,7 +34,7 @@
         </div>
         {% if post.link %}
         <div class="card-footer">
-            <a href="{{ post.link }}" class="btn">Read More</a>
+            <a href="{{ post.link }}" class="btn" {% if post.link.startswith('http') %}target="_blank"{% endif %}>Read More</a>
         </div>
         {% endif %}
     </article>
