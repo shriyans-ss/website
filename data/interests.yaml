@@ -1,6 +1,5 @@
 # Interests - Update these to customize your interests
 - title: "Neuroscience"
-  emoji: "🧠"
   description: "Understanding the structure and function of the nervous system and the biological basis of behavior and cognition."
   topics:
     - Cognitive Neuroscience
@@ -14,7 +13,6 @@
       url: "https://alleninstitute.org"
 
 - title: "Science Olympiad"
-  emoji: "🏆"
   description: "Participating in competitive science events and building problem-solving skills across diverse scientific disciplines."
   topics:
     - Experimental Design
@@ -28,7 +26,6 @@
       url: "https://scioly.org"
 
 - title: "Physics"
-  emoji: "⚛️"
   description: "Exploring the fundamental laws of motion, energy, and matter that govern the universe."
   topics:
     - Quantum Mechanics
@@ -40,3 +37,16 @@
       url: "https://physics.stackexchange.com"
     - name: "arXiv Physics"
       url: "https://arxiv.org/list/physics/recent"
+
+- title: "Reading & Literature"
+  description: "Exploring different worlds and perspectives through books."
+  topics:
+    - Fiction
+    - Philosophy
+    - Science
+    - History
+  resources:
+    - name: "Goodreads"
+      url: "https://goodreads.com"
+    - name: "Project Gutenberg"
+      url: "https://www.gutenberg.org"
