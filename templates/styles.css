@@ -159,44 +159,41 @@ h2 {
     font-style: italic;
 }
 
-/* Hero Section */
-.hero {
-    padding: 0.15rem 0;
-    display: block;
-}
-
-.hero-container {
+/* Intro (compact, replaces hero) */
+.intro-small {
     max-width: 1000px;
-    margin: 0 auto;
-    padding: 0.2rem 0.5rem;
-    background: linear-gradient(135deg, var(--light-green), var(--accent-green));
-    color: white;
-    border-radius: 2px;
-    max-height: 56px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+    margin: 0.5rem auto 0 auto;
+    padding: 0.25rem 0;
 }
 
-.hero h1 {
-    font-size: 0.9rem;
-    margin: 0 0 0 0;
-    color: white;
-}
-
-.hero .section-intro {
-    color: rgba(255,255,255,0.95);
-    font-style: normal;
-    font-size: 0.75rem;
+.hero-title {
+    font-size: 1rem;
     margin: 0;
-    opacity: 0.95;
+    color: var(--primary-green);
+    font-weight: 700;
+    display: inline-block;
 }
 
-/* Pull the features row up to sit directly below the hero */
+.intro-small .section-intro {
+    margin: 0 0 0 0.5rem;
+    color: var(--accent-green);
+    font-size: 0.95rem;
+    display: inline-block;
+}
+
+/* Pull the features row immediately under the intro */
 .features {
-    margin-top: -0.25rem;
+    margin-top: 0.25rem;
     padding-bottom: 1rem;
 }
+
+/* Force-override: compress spacing */
+.intro-small{padding:0.25rem 0 !important}
+.hero-title{font-size:0.95rem !important;margin:0 !important;padding:0 !important}
+.intro-small .section-intro{font-size:0.85rem !important;margin:0 0 0 0.5rem !important}
+.container{margin-top:0 !important;padding-top:0.5rem !important}
+.grid{gap:0.5rem !important}
+.card{padding:0.6rem !important}
 
 .features .card {
     margin: 0;
@@ -290,7 +287,7 @@ a:hover {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
+    gap: 0.5rem;
     align-items: start;
     justify-items: stretch;
 }

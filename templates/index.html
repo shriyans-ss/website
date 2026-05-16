@@ -3,12 +3,10 @@
 {% block title %}Home - {{ site_author }}{% endblock %}
 
 {% block content %}
-<section class="hero">
-    <div class="hero-container">
-        <h1>Hi, I'm {{ site_author }}</h1>
-        <p class="section-intro">{{ site_description }}</p>
-    </div>
-</section>
+<div class="intro-small">
+    <p class="hero-title">Hi, I'm {{ site_author }}</p>
+    <p class="section-intro">{{ site_description }}</p>
+</div>
 
 <section class="section features">
     <div>
