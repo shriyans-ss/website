@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}A Bibliometric Analysis of Top-Cited Studies on Graph Theory–Based Resting-State fMRI in ADHD and Generalized Anxiety Disorder - {{ site_author }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <article>
+        <div class="card-header">
+            <h2>A Bibliometric Analysis of Top-Cited Studies on Graph Theory–Based Resting-State fMRI in ADHD and Generalized Anxiety Disorder: A Blog Post</h2>
+            <p class="card-subtitle">March 2026</p>
+            <p style="font-style: italic; margin-top: 1rem;">A collaboration with 1M.Qara Ali, 2R. Yin, 3S.Chen, 4V.Bommisetty, 5M.Srivastava, T.Sriram, 8H.Dilip, 9Z.Nasir,10 H.Janjua</p>
+        </div>
+
+        <div class="card-body" style="line-height: 1.8;">
+            <p>Attention Deficit Hyperactivity Disorder (ADHD) and Generalized Anxiety Disorder are two psychiatric disorders with overlapping symptoms such as inattention, restlessness, and executive dysfunction, which complicates clinical differentiation. Graph theory–based approaches using resting-state fMRI are commonly used to study functional brain connectivity in these conditions. However, these studies often examine the disorders separately or in transdiagnostic samples, so it remains unclear what measures can differentiate ADHD from GAD. This bibliometric analysis identifies gaps in graph-theoretic resting-state fMRI research between these two disorders.</p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <figure>
+                    <img src="figures/figure1.jpg" alt="Overlapping symptoms between ADHD and anxiety disorders" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <figcaption><strong>Figure 1:</strong> Overlapping symptoms between ADHD and anxiety disorders contribute to diagnostic challenges¹</figcaption>
+                </figure>
+            </div>
+
+            <p>This study aims to perform a bibliometric analysis of the top 100 most cited papers to evaluate the contribution and current direction of graph theory–based resting-state fMRI in ADHD and generalized anxiety disorder.</p>
+
+            <h3>Methodology</h3>
+
+            <p>Web of Science (WoS) was used to identify the top 100 most cited articles on fMRI in ADHD and GAD. Data on authorship, institutional affiliation, journal distribution, and citation metrics were extracted. Analysis and visualization were performed using Excel and R.</p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <figure>
+                    <img src="figures/figure2.jpg" alt="Study selection workflow" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <figcaption><strong>Figure 2:</strong> Study selection workflow showing identification and screening of articles from Web of Science, resulting in 100 eligible studies (78 articles and 22 reviews).</figcaption>
+                </figure>
+            </div>
+
+            <h3>Results</h3>
+
+            <p>Research output was concentrated among highly cited authors and major academic institutions. Keyword analysis revealed strong overlap between ADHD, functional connectivity, and network analysis, while anxiety-related terms appeared less frequently. Graph-theoretic approaches have been used to distinguish GAD from healthy controls; however, few studies directly compare ADHD and GAD using this framework.</p>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <figure>
+                    <img src="figures/figure3.jpg" alt="Senior Author Institutions" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <figcaption><strong>Figure 3:</strong> Senior Author Institutions with multiple papers of the top 100 most cited papers on graph theory-based resting-state fMRI network analysis in ADHD and GAD.</figcaption>
+                </figure>
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <figure>
+                    <img src="figures/figure4.jpg" alt="Journals with multiple top-100 cited articles" style="max-width: 100%; height: auto; border-radius: 8px;">
+                    <figcaption><strong>Figure 4:</strong> Journals with multiple top-100 cited articles. Top journals: NeuroImage, Molecular Psychiatry, Imaging Neuroscience</figcaption>
+                </figure>
+            </div>
+
+            <h3>Discussion</h3>
+
+            <p>Graph theory–based resting-state fMRI is an established and methodologically consistent framework for studying ADHD. However, GAD remains underrepresented in this literature, with few studies directly comparing ADHD and GAD using this framework. This highlights a key gap in current research.</p>
+
+            <h3>Conclusion</h3>
+
+            <p>This bibliometric analysis highlights a key gap: while graph theory–based resting-state fMRI is well established in ADHD research, its application to GAD and direct ADHD–GAD comparison remains limited. Addressing this gap could improve diagnostic accuracy in populations where these conditions overlap. Future research should focus on applying graph-theoretic network measures to publicly available datasets to support neuroimaging-based differential diagnosis.</p>
+
+            <h3>References</h3>
+
+            <p>
+                ¹Comorbid ADHD and Anxiety: Treatment Prioritization Insights - European Society of Medicine. (2025, December 2). https://esmed.org/comorbid-adhd-and-anxiety-treatment-prioritization-insights/<br><br>
+                Individual variability in neural representations of mind-wandering | Network Neuroscience | MIT Press. (n.d.). Retrieved April 4, 2026, from https://direct.mit.edu/netn/article/8/3/808/121182/Individual-variability-in-neural-representations<br><br>
+                A survey of brain functional network extraction methods using fMRI data: Trends in Neurosciences. (n.d.). Retrieved April 4, 2026, from https://www.cell.com/trends/neurosciences/abstract/S0166-2236(24)00091-2?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0166223624000912%3Fshowall%3Dtrue<br><br>
+                Latifi, S., & Carmichael, S. T. (2024). The emergence of multiscale connectomics-based approaches in stroke recovery. Trends in Neurosciences, 47(4), 303–318. https://doi.org/10.1016/j.tins.2024.01.003
+            </p>
+        </div>
+
+        <div class="card-footer">
+            <a href="blog.html" class="btn">← Back to Blog</a>
+        </div>
+    </article>
+</section>
+{% endblock %}

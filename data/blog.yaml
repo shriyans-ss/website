@@ -1,38 +1,24 @@
 # Blog posts - Add your articles here
 # Use 'link' for external URLs or internal page links
 # Use 'slug' (optional) for creating internal blog post pages
-- title: "Getting Started with Python"
-  date: "January 1, 2026"
-  excerpt: "A beginner's guide to learning Python programming and getting your first project up and running."
-  link: "https://example.com/python-guide"
+- title: "A Bibliometric Analysis of Top-Cited Studies on Graph Theory–Based Resting-State fMRI in ADHD and Generalized Anxiety Disorder"
+  date: "March 2026"
+  excerpt: "A collaboration examining the contribution and current direction of graph theory–based resting-state fMRI in ADHD and generalized anxiety disorder through bibliometric analysis of top 100 most cited papers."
+  slug: "bibliometric-graph-theory-fmri-adhd-gad"
+  authors:
+    - "M.Qara Ali"
+    - "R. Yin"
+    - "S.Chen"
+    - "V.Bommisetty"
+    - "M.Srivastava"
+    - "T.Sriram"
+    - "H.Dilip"
+    - "Z.Nasir"
+    - "H.Janjua"
   tags:
-    - Python
-    - Programming
-    - Tutorial
-
-- title: "The Art of Web Design"
-  date: "December 15, 2025"
-  excerpt: "Exploring principles of effective web design and user experience in modern web applications."
-  link: "https://example.com/web-design"
-  tags:
-    - Web Design
-    - UX
-    - Frontend
-
-- title: "Building Scalable Applications"
-  date: "December 1, 2025"
-  excerpt: "Best practices and patterns for designing applications that can grow with your needs."
-  link: "https://example.com/scalable-apps"
-  tags:
-    - Architecture
-    - Backend
-    - DevOps
-
-- title: "Thoughts on Remote Work"
-  date: "November 15, 2025"
-  excerpt: "Reflections on the benefits and challenges of working remotely in the modern tech industry."
-  link: "https://example.com/remote-work"
-  tags:
-    - Work
-    - Lifestyle
-    - Productivity
+    - Neuroscience
+    - fMRI
+    - Graph Theory
+    - ADHD
+    - Anxiety
+    - Research

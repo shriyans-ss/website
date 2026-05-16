@@ -42,6 +42,7 @@ def main():
     generator.generate_index(OUTPUT_DIR)
     generator.generate_books_placeholder(OUTPUT_DIR)  # Books page temporarily replaced with placeholder
     generator.generate_blog_page(blog_data, OUTPUT_DIR)
+    generator.generate_blog_posts(blog_data, OUTPUT_DIR)
     generator.generate_interests_page(interests_data, OUTPUT_DIR)
     
     print(f"\nWebsite built successfully!")

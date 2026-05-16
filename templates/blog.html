@@ -10,7 +10,9 @@
     {% for post in blog_posts %}
     <article class="card">
         <div class="card-header">
-            {% if post.link %}
+            {% if post.slug %}
+            <h3 class="card-title"><a href="{{ post.slug }}.html">{{ post.title }}</a></h3>
+            {% elif post.link %}
             <h3 class="card-title"><a href="{{ post.link }}" {% if post.link.startswith('http') %}target="_blank"{% endif %}>{{ post.title }}</a></h3>
             {% else %}
             <h3 class="card-title">{{ post.title }}</h3>
@@ -32,9 +34,13 @@
             </p>
             {% endif %}
         </div>
-        {% if post.link %}
+        {% if post.slug or post.link %}
         <div class="card-footer">
+            {% if post.slug %}
+            <a href="{{ post.slug }}.html" class="btn">Read More</a>
+            {% else %}
             <a href="{{ post.link }}" class="btn" {% if post.link.startswith('http') %}target="_blank"{% endif %}>Read More</a>
+            {% endif %}
         </div>
         {% endif %}
     </article>

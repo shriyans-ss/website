@@ -102,3 +102,19 @@ class PageGenerator:
         html = self.render_template("interests.html", context)
         write_html_file(os.path.join(output_path, "interests.html"), html)
         print(f"✓ Generated interests.html ({len(interests)} interests)")
+    
+    def generate_blog_posts(self, posts: List[Dict[str, Any]], output_path: str) -> None:
+        """
+        Generate individual blog post pages for posts with slugs.
+        
+        Args:
+            posts: List of blog post dictionaries
+            output_path: Path to output directory
+        """
+        for post in posts:
+            if post.get('slug'):
+                context = {"post": post}
+                html = self.render_template("blog-post.html", context)
+                post_filename = f"{post['slug']}.html"
+                write_html_file(os.path.join(output_path, post_filename), html)
+                print(f"✓ Generated {post_filename}")
