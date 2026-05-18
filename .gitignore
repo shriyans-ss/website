@@ -39,3 +39,11 @@ Thumbs.db
 
 # Generated HTML
 output/
+
+# Node
+node_modules/
+.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
