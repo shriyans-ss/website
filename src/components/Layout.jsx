@@ -13,6 +13,8 @@ const navLinks = [
   { to: "/interests", label: "Interests" }
 ];
 
+const brandImage = "/site-logo.png";
+
 export default function Layout() {
   const location = useLocation();
 
@@ -20,10 +22,9 @@ export default function Layout() {
     <div className="app-shell">
       <header className="site-header">
         <div className="brand">
-          <div className="brand-mark">Q</div>
+          <img className="brand-mark brand-image" src={brandImage} alt="Site logo" />
           <div>
-            <p className="brand-title">Quiet Futures Lab</p>
-            <p className="brand-subtitle">Research, reading, and experiments</p>
+            <p className="brand-title">Shriyans's Website</p>
           </div>
         </div>
         <nav className="site-nav">

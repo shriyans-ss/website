@@ -28,7 +28,7 @@ export default function Blog() {
               </div>
               <div className="card-footer">
                 <span>{(post.authors || []).join(", ")}</span>
-                <Link className="card-link" to={`/blog/${post.slug}`}>
+                <Link className="btn primary" to={`/blog/${post.slug}`}>
                   Read post
                 </Link>
               </div>

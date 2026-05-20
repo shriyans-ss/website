@@ -7,7 +7,7 @@ export default function Interests() {
         <div className="section-header">
           <h2>Interests</h2>
           <p className="section-subtitle">
-            A snapshot of the domains shaping current work.
+            Things I'm currently working on learning more about/doing
           </p>
         </div>
         <div className="card-grid">
