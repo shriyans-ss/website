@@ -375,21 +375,29 @@ ul {
 }
 
 .responsive-figure {
-  margin: 0;
-  display: grid;
+  margin: 1.25rem auto;
+  display: block;
   gap: 0.75rem;
+  max-width: 680px;
+  width: clamp(320px, 60vw, 680px);
 }
 
 .responsive-figure img {
   width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
   display: block;
-  border-radius: 18px;
+  border-radius: 12px;
   border: 1px solid var(--stroke);
+  box-shadow: 0 8px 24px rgba(31,42,35,0.06);
 }
 
 .responsive-figure figcaption {
   color: var(--muted);
   font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
 }
 
 .rating {

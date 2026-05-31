@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - {{ site_author }}{% endblock %}
+
+{% block content %}
+<section class="section">
+    <article>
+        <div class="card-header">
+            <h2>{{ post.title }}</h2>
+            <p class="card-subtitle">{{ post.date }}</p>
+            {% if post.authors %}
+            <p style="font-style: italic; margin-top: 1rem;">{{ post.authors | join(', ') }}</p>
+            {% endif %}
+            {% if post.credit %}
+            <p class="post-credit">{{ post.credit }}</p>
+            {% endif %}
+        </div>
+
+        <div class="card-body" style="line-height: 1.8;">
+            {% for section in post.sections %}
+                {% if section.type == 'paragraph' %}
+                    <p>{{ section.text }}</p>
+                {% elif section.type == 'heading' %}
+                    <h3>{{ section.text }}</h3>
+                {% elif section.type == 'figure' %}
+                    <figure class="responsive-figure">
+                        <img src="{{ post.imageDir }}/{{ section.image }}" alt="{{ section.alt or '' }}">
+                        {% if section.caption %}
+                        <figcaption><strong>{{ section.caption_title or 'Figure' }}:</strong> {{ section.caption }}</figcaption>
+                        {% endif %}
+                        {% if section.credit %}
+                        <p class="figure-credit">{{ section.credit }}</p>
+                        {% endif %}
+                    </figure>
+                {% endif %}
+            {% endfor %}
+
+            {% if post.references %}
+            <h3>References</h3>
+            <div class="post-references">
+                {% for ref in post.references %}
+                <p>{{ ref }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+
+        <div class="card-footer">
+            <a href="/blog/" class="btn">← Back to Blog</a>
+            {% if post.credits_block %}
+            <div class="post-credits">
+                <h4>Credits</h4>
+                <p>{{ post.credits_block }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </article>
+</section>
+{% endblock %}

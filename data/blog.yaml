@@ -57,3 +57,93 @@
     - "Individual variability in neural representations of mind-wandering | Network Neuroscience | MIT Press. (n.d.). Retrieved April 4, 2026, from https://direct.mit.edu/netn/article/8/3/808/121182/Individual-variability-in-neural-representations"
     - "A survey of brain functional network extraction methods using fMRI data: Trends in Neurosciences. (n.d.). Retrieved April 4, 2026, from https://www.cell.com/trends/neurosciences/abstract/S0166-2236(24)00091-2?_returnURL=https%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0166223624000912%3Fshowall%3Dtrue"
     - "Latifi, S., & Carmichael, S. T. (2024). The emergence of multiscale connectomics-based approaches in stroke recovery. Trends in Neurosciences, 47(4), 303–318. https://doi.org/10.1016/j.tins.2024.01.003"
+- title: "Vascular Dysfunction Accelerates Aβ–Tau Interactions in Alzheimer's Disease: A Blog Post"
+  date: "May 2026"
+  excerpt: "A cross-modal meta-analysis of 100+ high-impact studies reveals cerebrovascular pathways driving neurodegeneration in Alzheimer's disease."
+  slug: "vascular-dysfunction-ab-tau-alzheimers"
+  imageDir: "vascular-figures"
+  authors:
+    - "Ali Soliman"
+    - "Vivaan Shah"
+    - "Pratika Thalluri"
+    - "Haidar Alkhafaf"
+    - "Arihant Jain"
+    - "Rida Khatoon"
+    - "Bailey Owens"
+  tags:
+    - Neuroscience
+    - Alzheimer's
+    - Vascular
+    - Aβ
+    - Tau
+    - Bibliometrics
+  sections:
+    - type: paragraph
+      text: |
+        Alzheimer’s disease is driven by a complex interplay of protein aggregation, vascular injury, and neurodegeneration. While the classical framework centers on extracellular amyloid-β (Aβ) accumulation and intracellular tau hyperphosphorylation, an expanding body of evidence argues that these processes do not occur in isolation. Instead, vascular dysfunction emerges early and acts as a catalytic force that reshapes the trajectory of Aβ and tau pathology.
+    - type: paragraph
+      text: |
+        Small-vessel disease, pericyte loss, endothelial injury, and blood–brain barrier (BBB) breakdown reduce the brain’s capacity to clear Aβ, intensify tau hyperphosphorylation, and accelerate neuronal stress long before overt cognitive decline appears. These vascular abnormalities are common, clinically measurable, and strongly predictive of disease progression, yet remain under-recognized in traditional Aβ-tau models.
+    - type: paragraph
+      text: |
+        Our aim is to clarify how cerebrovascular impairment shapes these molecular cascades. By synthesizing evidence from imaging cohorts, biomarker studies, mechanistic work, and large-scale bibliometric analyses, we examine how vascular injury contributes to Aβ accumulation, tau propagation, and the onset of cognitive dysfunction. Understanding this vascular axis may refine early detection strategies and expose new therapeutic entry points in Alzheimer’s disease.
+    - type: heading
+      text: "Objectives"
+    - type: list
+      ordered: false
+      items:
+        - "To examine how dysfunction in cerebrovascular health relates to Aβ build-up and tau changes in Alzheimer’s disease."
+        - "To evaluate whether vascular changes speed up amyloid and tau progression and how this contributes to specific patterns of cognitive impairment in Alzheimer’s disease."
+        - "To identify trends and gaps in the existing research on vascular dysfunction, Aβ, and tau to determine which areas are underexplored."
+    - type: heading
+      text: "Methods & Bibliometric Workflow"
+    - type: paragraph
+      text: |
+        Our analysis synthesized findings from high-impact Alzheimer’s literature to clarify how vascular dysfunction interacts with Aβ and tau pathology. We performed a structured search across PubMed and Web of Science to identify studies focused on Aβ, tau, cerebrovascular injury, imaging biomarkers, and mechanistic pathways. After screening by relevance, full-text papers were categorized by vascular markers, Aβ/tau outcomes, and cognitive measures.
+    - type: paragraph
+      text: |
+        Bibliometric datasets were then built to examine research trends at scale. Keywords related to small-vessel disease, BBB breakdown, pericyte loss, vascular inflammation, tau propagation, and Aβ clearance were extracted and mapped across the top 100 most-cited publications. Citation networks were constructed to identify leading institutions, high-output authors, and clusters of vascular-focused research. All bibliometric analyses were performed using R Studio and Excel. Visualization of author networks, institutional productivity, and keyword co-occurrence patterns was generated from these datasets to reveal where vascular-Aβ-tau interactions are most heavily investigated across the field.
+    - type: paragraph
+      text: "Workflow: Literature Search → Screening → Keyword Extraction → Network Mapping → Citation Analysis → Visualization"
+    - type: heading
+      text: "Key Findings"
+    - type: list
+      ordered: true
+      items:
+        - "Vascular Dysfunction Intensifies Aβ and Tau Burden Across datasets, vascular injury consistently amplified the influence of Aβ on tau accumulation and structural decline. Early vascular impairment—particularly small-vessel disease, pericyte loss, and BBB disruption—aligned with faster tau propagation, higher phosphorylated tau levels, and broader cortical vulnerability. These vascular signatures appeared early, often before measurable cognitive loss."
+        - "Research Concentrates Around Vascular Pathways Bibliometric mapping showed that institutions with the greatest number of high-impact papers overwhelmingly prioritized vascular mechanisms in Alzheimer’s disease. Senior authors with the highest citation counts repeatedly published on vascular–Aβ–tau interaction pathways, reflecting a cohesive and expanding focus on cerebrovascular contributions to neurodegeneration."
+        - "Aβ-Driven Tau Changes Most Closely Track Vascular Biomarkers Across PET, CSF, and MRI studies, tau accumulation was most tightly linked to markers of vascular dysfunction rather than Aβ alone. Regions with reduced vascular integrity—especially temporal and parietal areas—showed stronger coupling between Aβ load, tau spread, and downstream cognitive decline. These findings support vascular injury as a key mediator shaping Aβ-related tau pathology."
+        - "Convergent Evidence Supports a Vascular-Centered Mechanistic Model Integrated neuroimaging, biomarker, mechanistic, and bibliometric evidence converged on the same conclusion: vascular injury accelerates Aβ retention, amplifies tau hyperphosphorylation, and drives the trajectory of cognitive decline. This cross-modal signal supports cerebrovascular pathways as central to AD progression."
+    - type: figure
+      image: "flowdiagram.jpg"
+      alt: "Literature search and analysis flow diagram"
+      caption: "Flow Diagram"
+    - type: figure
+      image: "workflow.jpg"
+      alt: "Bibliometric workflow visualization"
+      caption: "Workflow: Literature Search → Screening → Keyword Extraction → Network Mapping → Citation Analysis → Visualization"
+    - type: figure
+      image: "figure1.2.jpg"
+      alt: "Senior author citation counts"
+      caption: "Figure 1: Senior Author Citation Counts (WoS Core)"
+    - type: figure
+      image: "figure2.2.jpg"
+      alt: "Journals with top 100 papers"
+      caption: "Figure 2: Journals with top 100 papers"
+    - type: heading
+      text: "Interpretation & Impact"
+    - type: paragraph
+      text: |
+        Our findings converge on a single, consistent theme: vascular dysfunction is not a secondary feature of Alzheimer’s disease, but a central mediator linking Aβ accumulation to tau propagation and downstream neurodegeneration. Across imaging cohorts, mechanistic studies, and bibliometric patterns, the same relationship emerged—early vascular injury reshapes the trajectory of both Aβ and tau pathology.
+    - type: paragraph
+      text: |
+        Vascular impairment reduces Aβ clearance, amplifies tau phosphorylation, and accelerates the decline of structurally vulnerable regions, often before measurable cognitive loss appears. This consistent cross-modal signal highlights the need to treat vascular health as a primary axis of Alzheimer’s progression rather than an auxiliary contributor.
+    - type: paragraph
+      text: "Together, these results support a vascular-centered model of AD in which small-vessel disease, BBB breakdown, and endothelial dysfunction collectively modulate how rapidly Aβ and tau drive neurodegeneration."
+    - type: list
+      ordered: false
+      items:
+        - "Early vascular injury accelerates both Aβ retention and tau spread"
+        - "BBB disruption and small-vessel disease amplify downstream structural decline"
+        - "Targeting vascular integrity may slow or alter the trajectory of AD pathology"
+        - "Cardiovascular risk factors remain potent, modifiable drivers of long-term outcome"
