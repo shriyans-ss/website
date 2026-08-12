@@ -4,7 +4,10 @@ import { blogPosts } from "../data.js";
 export default function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts.find((item) => item.slug === slug);
+<<<<<<< HEAD
   const imageBasePath = post?.imageDir || (post?.slug ? `/blog/${post.slug}/images` : "");
+=======
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
 
   if (!post) {
     return (
@@ -41,6 +44,7 @@ export default function BlogPost() {
             </span>
           ))}
         </div>
+<<<<<<< HEAD
         <div className="post-body">
           {(post.sections || []).map((section, index) => {
             if (section.type === "paragraph") {
@@ -84,6 +88,8 @@ export default function BlogPost() {
             </div>
           ) : null}
         </div>
+=======
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
       </section>
     </div>
   );

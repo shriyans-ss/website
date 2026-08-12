@@ -1,4 +1,5 @@
 :root {
+<<<<<<< HEAD
   --bg: #9aa38f;
   --text: #172118;
   --muted: #3f4f45;
@@ -6,6 +7,15 @@
   --accent-strong: #365843;
   --stroke: rgba(31, 42, 35, 0.22);
   --shadow: 0 18px 40px rgba(31, 42, 35, 0.18);
+=======
+  --bg: #b7c3b0;
+  --text: #1f2a23;
+  --muted: #4c5a52;
+  --accent: #2f3c33;
+  --accent-strong: #42544a;
+  --stroke: rgba(31, 42, 35, 0.18);
+  --shadow: 0 18px 40px rgba(31, 42, 35, 0.12);
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
 }
 
 * {
@@ -74,16 +84,27 @@ ul {
   font-size: 1.2rem;
 }
 
+<<<<<<< HEAD
 .brand-image {
   object-fit: cover;
   padding: 0;
 }
 
+=======
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
 .brand-title {
   font-weight: 600;
   font-size: 1.1rem;
 }
 
+<<<<<<< HEAD
+=======
+.brand-subtitle {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
 .site-nav {
   display: flex;
   gap: 1rem;
@@ -363,6 +384,7 @@ ul {
   font-size: 1.1rem;
 }
 
+<<<<<<< HEAD
 .post-body {
   display: grid;
   gap: 1.25rem;
@@ -400,6 +422,8 @@ ul {
   text-align: center;
 }
 
+=======
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
 .rating {
   color: var(--accent-strong);
   font-family: "Playfair Display", serif;

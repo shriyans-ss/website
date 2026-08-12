@@ -8,7 +8,11 @@ export default function Books() {
       <section className="section">
         <div className="section-header">
           <h2>Bookshelf</h2>
+<<<<<<< HEAD
           <p className="section-subtitle">A non-exhaustive list of books I've read</p>
+=======
+          <p className="section-subtitle">Notes on what keeps the mind sharp.</p>
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
         </div>
         <div className="card-grid">
           {books.map((book) => (

@@ -7,7 +7,11 @@ export default function Interests() {
         <div className="section-header">
           <h2>Interests</h2>
           <p className="section-subtitle">
+<<<<<<< HEAD
             Things I'm currently working on learning more about/doing
+=======
+            A snapshot of the domains shaping current work.
+>>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
           </p>
         </div>
         <div className="card-grid">
