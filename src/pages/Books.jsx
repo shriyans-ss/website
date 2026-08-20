@@ -1,6 +1,9 @@
 import { books } from "../data.js";
 
-const renderRating = (rating) => "*".repeat(Math.max(0, rating || 0));
+const MAX_RATING = 5;
+
+const clampRating = (rating) =>
+  Math.min(MAX_RATING, Math.max(0, Math.round(rating || 0)));
 
 export default function Books() {
   return (
@@ -8,18 +11,24 @@ export default function Books() {
       <section className="section">
         <div className="section-header">
           <h2>Bookshelf</h2>
-<<<<<<< HEAD
           <p className="section-subtitle">A non-exhaustive list of books I've read</p>
-=======
-          <p className="section-subtitle">Notes on what keeps the mind sharp.</p>
->>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
         </div>
         <div className="card-grid">
           {books.map((book) => (
             <article key={book.title} className="card">
               <div className="card-header">
                 <p className="card-meta">{book.genre}</p>
-                <span className="rating">{renderRating(book.rating)}</span>
+                {book.rating ? (
+                  <span
+                    className="rating"
+                    aria-label={`Rated ${clampRating(book.rating)} out of ${MAX_RATING}`}
+                  >
+                    <span aria-hidden="true">
+                      {"★".repeat(clampRating(book.rating))}
+                      {"☆".repeat(MAX_RATING - clampRating(book.rating))}
+                    </span>
+                  </span>
+                ) : null}
               </div>
               <h3>{book.title}</h3>
               <p className="card-text">{book.description}</p>

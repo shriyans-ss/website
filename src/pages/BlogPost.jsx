@@ -1,13 +1,67 @@
+import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { blogPosts } from "../data.js";
+
+function Figure({ src, alt, caption }) {
+  const [failed, setFailed] = useState(false);
+
+  // Hide the whole figure when the image is missing so we never leave a
+  // dangling caption pointing at nothing.
+  if (src && failed) {
+    return null;
+  }
+
+  return (
+    <figure className="responsive-figure">
+      {src ? (
+        <img src={src} alt={alt || ""} loading="lazy" onError={() => setFailed(true)} />
+      ) : null}
+      {caption ? <figcaption>{caption}</figcaption> : null}
+    </figure>
+  );
+}
+
+function Section({ section, imageBasePath }) {
+  if (section.type === "paragraph") {
+    return <p>{section.text}</p>;
+  }
+
+  if (section.type === "heading") {
+    return <h3>{section.text}</h3>;
+  }
+
+  if (section.type === "list") {
+    const items = (section.items || []).map((item, index) => (
+      <li key={index}>{item}</li>
+    ));
+
+    return section.ordered ? (
+      <ol className="post-list ordered">{items}</ol>
+    ) : (
+      <ul className="post-list">{items}</ul>
+    );
+  }
+
+  if (section.type === "figure") {
+    return (
+      <Figure
+        src={section.image ? `${imageBasePath}/${section.image}` : ""}
+        alt={section.alt}
+        caption={section.caption}
+      />
+    );
+  }
+
+  return null;
+}
 
 export default function BlogPost() {
   const { slug } = useParams();
   const post = blogPosts.find((item) => item.slug === slug);
-<<<<<<< HEAD
-  const imageBasePath = post?.imageDir || (post?.slug ? `/blog/${post.slug}/images` : "");
-=======
->>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
+  const rawBase = post?.imageDir || (post?.slug ? `blog/${post.slug}/images` : "");
+  // Strip any leading slash so assets resolve against Vite's relative base ("./"),
+  // which keeps them working under a GitHub Pages project subpath.
+  const imageBasePath = rawBase.replace(/^\/+/, "");
 
   if (!post) {
     return (
@@ -27,8 +81,8 @@ export default function BlogPost() {
 
   return (
     <div className="page-content">
-      <section className="section">
-        <Link className="text-link" to="/blog">
+      <article className="section">
+        <Link className="text-link back-link" to="/blog">
           Back to the blog
         </Link>
         <div className="post-header">
@@ -44,53 +98,22 @@ export default function BlogPost() {
             </span>
           ))}
         </div>
-<<<<<<< HEAD
         <div className="post-body">
-          {(post.sections || []).map((section, index) => {
-            if (section.type === "paragraph") {
-              return <p key={index}>{section.text}</p>;
-            }
-
-            if (section.type === "heading") {
-              return <h3 key={index}>{section.text}</h3>;
-            }
-
-            if (section.type === "figure") {
-              return (
-                <figure key={index} className="responsive-figure">
-                  {section.image ? (
-                    <img
-                      src={`${imageBasePath}/${section.image}`}
-                      alt={section.alt || ""}
-                      onError={(event) => {
-                        event.currentTarget.style.display = "none";
-                      }}
-                    />
-                  ) : null}
-                  <figcaption>{section.caption}</figcaption>
-                </figure>
-              );
-            }
-
-            return null;
-          })}
+          {(post.sections || []).map((section, index) => (
+            <Section key={index} section={section} imageBasePath={imageBasePath} />
+          ))}
           {post.references?.length ? (
-            <div>
+            <div className="post-references">
               <h3>References</h3>
-              <p>
-                {post.references.map((reference, referenceIndex) => (
-                  <span key={referenceIndex}>
-                    {reference}
-                    {referenceIndex < post.references.length - 1 ? <><br /><br /></> : null}
-                  </span>
+              <ol className="reference-list">
+                {post.references.map((reference, index) => (
+                  <li key={index}>{reference}</li>
                 ))}
-              </p>
+              </ol>
             </div>
           ) : null}
         </div>
-=======
->>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
-      </section>
+      </article>
     </div>
   );
 }

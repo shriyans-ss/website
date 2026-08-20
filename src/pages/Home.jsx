@@ -1,4 +1,5 @@
-import { blogPosts, books, interests } from "../data.js";
+import { Link } from "react-router-dom";
+import { blogPosts, interests } from "../data.js";
 
 export default function Home() {
   return (
@@ -12,12 +13,12 @@ export default function Home() {
             experiments that keep the questions open.
           </p>
           <div className="hero-actions">
-            <a className="btn primary" href="#/blog">
+            <Link className="btn primary" to="/blog">
               Read the latest
-            </a>
-            <a className="btn ghost" href="#/books">
+            </Link>
+            <Link className="btn ghost" to="/books">
               Browse the shelf
-            </a>
+            </Link>
           </div>
         </div>
         <div className="hero-panel">
@@ -36,15 +37,23 @@ export default function Home() {
       <section className="section">
         <div className="section-header">
           <h2>Latest writing</h2>
-          <a className="text-link" href="#/blog">
+          <Link className="text-link" to="/blog">
             View all posts
-          </a>
+          </Link>
         </div>
         <div className="card-grid">
           {blogPosts.slice(0, 3).map((post) => (
-            <article key={post.title} className="card">
+            <article key={post.slug || post.title} className="card">
               <p className="card-meta">{post.date}</p>
-              <h3>{post.title}</h3>
+              <h3>
+                {post.slug ? (
+                  <Link className="card-link" to={`/blog/${post.slug}`}>
+                    {post.title}
+                  </Link>
+                ) : (
+                  post.title
+                )}
+              </h3>
               <p className="card-text">{post.excerpt}</p>
               <div className="card-tags">
                 {(post.tags || []).slice(0, 3).map((tag) => (
@@ -61,9 +70,9 @@ export default function Home() {
       <section className="section">
         <div className="section-header">
           <h2>Signals and interests</h2>
-          <a className="text-link" href="#/interests">
+          <Link className="text-link" to="/interests">
             Explore focus areas
-          </a>
+          </Link>
         </div>
         <div className="card-grid">
           {interests.slice(0, 3).map((interest) => (

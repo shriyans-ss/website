@@ -1,10 +1,13 @@
+import { useEffect, useState } from "react";
 import { NavLink, Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/Home.jsx";
 import Books from "../pages/Books.jsx";
 import Blog from "../pages/Blog.jsx";
 import BlogPost from "../pages/BlogPost.jsx";
 import Interests from "../pages/Interests.jsx";
+import NotFound from "../pages/NotFound.jsx";
 import Footer from "./Footer.jsx";
+import { blogPosts, interests } from "../data.js";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -13,31 +16,52 @@ const navLinks = [
   { to: "/interests", label: "Interests" }
 ];
 
-<<<<<<< HEAD
-const brandImage = "/site-logo.png";
+const brandImage = "site-logo.png";
 
-=======
->>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
+// The marquee reads from real content so it always reflects what is on the
+// site, rather than a hard-coded list that drifts out of date.
+const tickerTopics = Array.from(
+  new Set([
+    ...blogPosts.flatMap((post) => post.tags || []),
+    ...interests.map((interest) => interest.title)
+  ])
+);
+
+const tickerText = tickerTopics.length
+  ? `${tickerTopics.join(" / ")} / `
+  : "";
+
 export default function Layout() {
   const location = useLocation();
+  const [stuck, setStuck] = useState(false);
+
+  // Show the header hairline only once the page has scrolled away from the top.
+  useEffect(() => {
+    const onScroll = () => setStuck(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Each route change should start at the top of the new page.
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  }, [location.pathname]);
 
   return (
     <div className="app-shell">
-      <header className="site-header">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+
+      <header className={stuck ? "site-header is-stuck" : "site-header"}>
         <div className="brand">
-<<<<<<< HEAD
-          <img className="brand-mark brand-image" src={brandImage} alt="Site logo" />
+          <img className="brand-mark brand-image" src={brandImage} alt="" />
           <div>
             <p className="brand-title">Shriyans's Website</p>
-=======
-          <div className="brand-mark">Q</div>
-          <div>
-            <p className="brand-title">Quiet Futures Lab</p>
-            <p className="brand-subtitle">Research, reading, and experiments</p>
->>>>>>> cb42d9064916943a488ce4de44523d96ca2c49f1
           </div>
         </div>
-        <nav className="site-nav">
+        <nav className="site-nav" aria-label="Primary">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -53,20 +77,16 @@ export default function Layout() {
         </nav>
       </header>
 
-      <div className="flow-ticker" aria-hidden="true">
-        <div className="ticker-track">
-          <span className="ticker-item">
-            Study archive / Field notes / Signal mapping / Quiet experiments /
-            Reading shelf / Research drafts /
-          </span>
-          <span className="ticker-item">
-            Study archive / Field notes / Signal mapping / Quiet experiments /
-            Reading shelf / Research drafts /
-          </span>
+      {tickerText ? (
+        <div className="flow-ticker" aria-hidden="true">
+          <div className="ticker-track">
+            <span className="ticker-item">{tickerText}</span>
+            <span className="ticker-item">{tickerText}</span>
+          </div>
         </div>
-      </div>
+      ) : null}
 
-      <main className="site-main">
+      <main className="site-main" id="main">
         <div className="page" key={location.pathname}>
           <Routes location={location}>
             <Route path="/" element={<Home />} />
@@ -74,6 +94,7 @@ export default function Layout() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/interests" element={<Interests />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </main>
