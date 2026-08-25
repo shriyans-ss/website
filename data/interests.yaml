@@ -25,18 +25,20 @@
     - name: "Science Olympiad Student Center"
       url: "https://scioly.org"
 
-- title: "Physics"
-  description: "Exploring the fundamental laws of motion, energy, and matter that govern the universe."
+# TODO: replace the description and resources below with your own wording and links.
+- title: "Chemistry"
+  description: "Physical chemistry in particular — how energy, structure, and reaction dynamics explain the way matter behaves."
   topics:
-    - Quantum Mechanics
     - Thermodynamics
-    - Electromagnetism
-    - Astrophysics
+    - Chemical Kinetics
+    - Quantum Chemistry
+    - Spectroscopy
+    - Statistical Mechanics
   resources:
-    - name: "Physics Stack Exchange"
-      url: "https://physics.stackexchange.com"
-    - name: "arXiv Physics"
-      url: "https://arxiv.org/list/physics/recent"
+    - name: "J. Phys. Chem. (ACS)"
+      url: "https://pubs.acs.org/journal/jpchax"
+    - name: "NIST Chemistry WebBook"
+      url: "https://webbook.nist.gov/chemistry/"
 
 - title: "Reading & Literature"
   description: "Exploring different worlds and perspectives through books."
