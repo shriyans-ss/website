@@ -179,7 +179,6 @@
   date: September 2026
   date_iso: '2026-09-06'
   slug: functional-connectivity-white-matter-microstructure-asd
-  status: draft
   imageDir: /blog/functional-connectivity-white-matter-microstructure-asd/images
   excerpt: A proposed observational case-control study pairing resting-state fMRI with diffusion kurtosis imaging in the Healthy Brain Network cohort, to test whether white matter microstructural complexity tracks functional connectivity in Autism Spectrum Disorder.
   authors:
