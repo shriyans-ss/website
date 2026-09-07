@@ -14,6 +14,7 @@ export default function Blog() {
             <article key={post.title} className="card">
               <p className="card-meta">
                 <time dateTime={post.date_iso}>{post.date}</time>
+              {post.kind ? <span className="kind-label">{post.kind}</span> : null}
                 {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
               </p>
               <h3>

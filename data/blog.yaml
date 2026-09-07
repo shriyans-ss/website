@@ -251,9 +251,10 @@
   date: September 2026
   date_iso: '2026-09-05'
   slug: myelin-risk-factor-research-vs-journalism-ms
+  kind: Literature review
   status: draft
   imageDir: /blog/myelin-risk-factor-research-vs-journalism-ms/images
-  excerpt: A comparison of how a primary neuroimmunology study and its science-journalism coverage communicate the same finding — that myelin retained during an autoimmune attack may accelerate axonal degeneration in Multiple Sclerosis — at very different levels of specificity.
+  excerpt: A literature review of how retained myelin may accelerate axonal degeneration in Multiple Sclerosis, examining how the same finding is communicated in the primary neuroimmunology literature and in science journalism.
   authors:
   - Shriyans Shindadkar
   tags:

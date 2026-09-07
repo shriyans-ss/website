@@ -1152,3 +1152,13 @@ img {
   text-transform: uppercase;
   font-size: 0.74rem;
 }
+
+/* Genre label (research proposal, literature review, …) beside the post date. */
+.kind-label {
+  margin-left: 0.6rem;
+  padding-left: 0.6rem;
+  border-left: 1px solid var(--stroke-strong);
+  color: var(--muted);
+  text-transform: none;
+  letter-spacing: 0;
+}

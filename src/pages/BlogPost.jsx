@@ -88,6 +88,7 @@ export default function BlogPost() {
         <div className="post-header">
           <p className="card-meta">
             <time dateTime={post.date_iso}>{post.date}</time>
+            {post.kind ? <span className="kind-label">{post.kind}</span> : null}
             {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
           </p>
           <h1>{post.title}</h1>
