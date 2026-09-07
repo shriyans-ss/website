@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { blogPosts, interests, isDraft, site } from "../data.js";
+import Connectome from "../components/Connectome.jsx";
 
 export default function Home() {
   return (
     <div className="page-content">
       <section className="hero">
+        <Connectome />
         <div className="hero-text">
           <h1>{site.hero?.headline}</h1>
           {site.hero?.intro ? (
@@ -44,7 +46,7 @@ export default function Home() {
             <article key={post.slug || post.title} className="card">
               <p className="card-meta">
                 <time dateTime={post.date_iso}>{post.date}</time>
-              {post.kind ? <span className="kind-label">{post.kind}</span> : null}
+              {post.kind ? <span className="kind-label" data-kind={post.kind}>{post.kind}</span> : null}
                 {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
               </p>
               <h3>

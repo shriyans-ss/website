@@ -5,7 +5,9 @@ const year = new Date().getFullYear();
 // Only links with a value are rendered — an empty footer beats a dead link.
 const buildLinks = () =>
   [
-    site.email ? { label: "Email", href: `mailto:${site.email}` } : null,
+    // Show the address itself, not the word "Email" — on a site that invites
+    // people to get in touch, the address is the useful thing to see.
+    site.email ? { label: site.email, href: `mailto:${site.email}` } : null,
     site.github ? { label: "GitHub", href: site.github } : null,
     site.linkedin ? { label: "LinkedIn", href: site.linkedin } : null,
     site.scholar ? { label: "Scholar", href: site.scholar } : null,

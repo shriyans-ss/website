@@ -668,6 +668,11 @@ img {
 }
 
 .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 0.35rem 0;
   color: var(--faint);
   font-size: 0.74rem;
   font-weight: 600;
@@ -1099,7 +1104,6 @@ img {
 
 .draft-badge {
   display: inline-block;
-  margin-left: 0.6rem;
   padding: 0.1rem 0.5rem;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -1153,12 +1157,176 @@ img {
   font-size: 0.74rem;
 }
 
-/* Genre label (research proposal, literature review, …) beside the post date. */
+/* ==========================================================================
+   Signature: the connectome
+   A seeded small-world graph behind the hero. It sits under the content and
+   never intercepts pointer events.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero > .hero-text,
+.hero > .hero-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.connectome {
+  position: absolute;
+  /* Confined to the right-hand column only — it must never reach the
+     headline. The old full-bleed inset put nodes directly under the text. */
+  top: -8%;
+  right: -4%;
+  bottom: -8%;
+  left: 52%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.72;
+  /* Feather the left edge so it dissolves toward the text rather than
+     stopping at a hard line. */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 34%, #000 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 34%, #000 100%);
+}
+
+/* Below the hero's stacking breakpoint the text sits where the graph was,
+   so it is removed rather than layered underneath. */
+@media (max-width: 900px) {
+  .connectome {
+    display: none;
+  }
+}
+
+.hero-panel .panel-card {
+  background: var(--surface);
+  backdrop-filter: blur(2px);
+}
+
+.connectome-edges line {
+  stroke: var(--accent);
+  stroke-width: 0.18;
+  opacity: 0.28;
+  animation: edge-breathe 9s var(--ease) infinite;
+  animation-delay: calc(var(--i) * -0.7s);
+}
+
+.connectome-nodes circle {
+  fill: var(--accent);
+  opacity: 0.5;
+  animation: node-pulse 7s var(--ease) infinite;
+  animation-delay: calc(var(--i) * -0.55s);
+}
+
+.connectome-nodes circle.is-hub {
+  opacity: 0.85;
+}
+
+@keyframes edge-breathe {
+  0%, 100% { opacity: 0.16; }
+  50%      { opacity: 0.36; }
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0.38; }
+  50%      { opacity: 0.72; }
+}
+
+@media (prefers-color-scheme: dark) {
+  .connectome-edges line { opacity: 0.34; stroke-width: 0.2; }
+  .connectome-nodes circle { opacity: 0.6; }
+}
+
+/* ==========================================================================
+   Bolder editorial type
+   ========================================================================== */
+
+.hero h1 {
+  font-size: clamp(2.6rem, 1.5rem + 4.6vw, 4.6rem);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  max-width: 15ch;
+}
+
+/* Fraunces is a variable font: push optical size up so large display text
+   picks up the higher-contrast, sharper-serif cut it was designed for. */
+.hero h1,
+.post-header h1 {
+  font-variation-settings: "opsz" 128, "SOFT" 0, "WONK" 1;
+}
+
+.section-header h2 {
+  font-size: clamp(1.9rem, 1.3rem + 2vw, 2.9rem);
+  letter-spacing: -0.028em;
+}
+
+/* A heavy accent rule replaces the old hairline under section headers. */
+.section-header {
+  border-bottom: none;
+  padding-bottom: 0.9rem;
+  position: relative;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.25rem;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   Genre colour-coding
+   Each `kind` gets its own hue so a proposal, an analysis and a review are
+   distinguishable at a glance on a mixed index.
+   ========================================================================== */
+
 .kind-label {
-  margin-left: 0.6rem;
-  padding-left: 0.6rem;
-  border-left: 1px solid var(--stroke-strong);
-  color: var(--muted);
+  --kind: var(--accent);
+  padding: 0.12rem 0.55rem;
+  border-left: none;
+  border-radius: var(--radius-pill);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--kind);
+  background: color-mix(in srgb, var(--kind) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--kind) 38%, transparent);
+  white-space: nowrap;
+}
+
+.kind-label[data-kind="Research proposal"]     { --kind: #1d5b4a; }
+.kind-label[data-kind="Bibliometric analysis"] { --kind: #1f5f7a; }
+.kind-label[data-kind="Literature review"]     { --kind: #6a4a86; }
+
+@media (prefers-color-scheme: dark) {
+  .kind-label[data-kind="Research proposal"]     { --kind: #6fd3b2; }
+  .kind-label[data-kind="Bibliometric analysis"] { --kind: #6fc2e0; }
+  .kind-label[data-kind="Literature review"]     { --kind: #c1a3e0; }
+}
+
+/* The global reduced-motion rule freezes the graph mid-keyframe; pin it to a
+   deliberate resting state instead. */
+@media (prefers-reduced-motion: reduce) {
+  .connectome-edges line { animation: none; opacity: 0.26; }
+  .connectome-nodes circle { animation: none; opacity: 0.5; }
+  .connectome-nodes circle.is-hub { opacity: 0.85; }
+}
+
+/* The email address is the footer's most useful item — give it the accent and
+   let it sit on its own line on narrow screens rather than truncating. */
+.footer-links a[href^="mailto:"] {
+  color: var(--accent);
+  font-weight: 600;
   text-transform: none;
   letter-spacing: 0;
+  word-break: break-word;
 }
