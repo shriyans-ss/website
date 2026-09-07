@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { blogPosts } from "../data.js";
+import { blogPosts, isDraft } from "../data.js";
 
 function Figure({ src, alt, caption }) {
   const [failed, setFailed] = useState(false);
@@ -86,10 +86,28 @@ export default function BlogPost() {
           Back to the blog
         </Link>
         <div className="post-header">
-          <p className="card-meta">{post.date}</p>
+          <p className="card-meta">
+            <time dateTime={post.date_iso}>{post.date}</time>
+            {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
+          </p>
           <h1>{post.title}</h1>
           <p className="post-authors">{(post.authors || []).join(", ")}</p>
+          {post.affiliation ? (
+            <p className="post-affiliation">{post.affiliation}</p>
+          ) : null}
+          {post.advisors?.length ? (
+            <p className="post-advisors">
+              <span className="post-advisors-label">Advisors</span>{" "}
+              {post.advisors.join(", ")}
+            </p>
+          ) : null}
         </div>
+        {isDraft(post) ? (
+          <p className="draft-notice">
+            This post is a draft. It is visible only when running the site
+            locally and is excluded from the published build.
+          </p>
+        ) : null}
         <p className="post-excerpt">{post.excerpt}</p>
         <div className="card-tags">
           {(post.tags || []).map((tag) => (

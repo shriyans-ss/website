@@ -1,24 +1,41 @@
+import { site } from "../data.js";
+
 const year = new Date().getFullYear();
 
+// Only links with a value are rendered — an empty footer beats a dead link.
+const buildLinks = () =>
+  [
+    site.email ? { label: "Email", href: `mailto:${site.email}` } : null,
+    site.github ? { label: "GitHub", href: site.github } : null,
+    site.linkedin ? { label: "LinkedIn", href: site.linkedin } : null,
+    site.scholar ? { label: "Scholar", href: site.scholar } : null,
+    site.orcid ? { label: "ORCID", href: site.orcid } : null
+  ].filter(Boolean);
+
 export default function Footer() {
+  const links = buildLinks();
+
   return (
     <footer className="site-footer">
       <div>
-        <p className="footer-title">Shriyans Shindadkar</p>
-        <p className="footer-text">Neuroscience &amp; robotics.</p>
+        <p className="footer-title">{site.name || "Shriyans Shindadkar"}</p>
+        {site.tagline ? <p className="footer-text">{site.tagline}</p> : null}
       </div>
 
-      {/*
-        TODO: add your real links, then delete this comment.
-        Do not ship placeholder handles — an empty footer beats a dead link.
-
+      {links.length ? (
         <div className="footer-links">
-          <a href="mailto:you@example.com">Email</a>
-          <a href="https://github.com/USERNAME" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/USERNAME" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=ID" target="_blank" rel="noreferrer">Scholar</a>
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.href.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noreferrer"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      */}
+      ) : null}
 
       <div className="footer-meta">
         <span>&copy; {year}</span>

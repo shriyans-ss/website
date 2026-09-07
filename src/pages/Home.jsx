@@ -1,17 +1,15 @@
 import { Link } from "react-router-dom";
-import { blogPosts, interests } from "../data.js";
+import { blogPosts, interests, isDraft, site } from "../data.js";
 
 export default function Home() {
   return (
     <div className="page-content">
       <section className="hero">
         <div className="hero-text">
-          <p className="eyebrow">Calm, focused, and readable</p>
-          <h1>Maps of curiosity, shared in small batches.</h1>
-          <p className="hero-copy">
-            A minimalist home for research threads, book notes, and the
-            experiments that keep the questions open.
-          </p>
+          <h1>{site.hero?.headline}</h1>
+          {site.hero?.intro ? (
+            <p className="hero-copy">{site.hero.intro}</p>
+          ) : null}
           <div className="hero-actions">
             <Link className="btn primary" to="/blog">
               Read the latest
@@ -44,7 +42,10 @@ export default function Home() {
         <div className="card-grid">
           {blogPosts.slice(0, 3).map((post) => (
             <article key={post.slug || post.title} className="card">
-              <p className="card-meta">{post.date}</p>
+              <p className="card-meta">
+                <time dateTime={post.date_iso}>{post.date}</time>
+                {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
+              </p>
               <h3>
                 {post.slug ? (
                   <Link className="card-link" to={`/blog/${post.slug}`}>

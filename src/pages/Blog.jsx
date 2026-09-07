@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { blogPosts } from "../data.js";
+import { blogPosts, isDraft } from "../data.js";
 
 export default function Blog() {
   return (
@@ -12,7 +12,10 @@ export default function Blog() {
         <div className="card-grid">
           {blogPosts.map((post) => (
             <article key={post.title} className="card">
-              <p className="card-meta">{post.date}</p>
+              <p className="card-meta">
+                <time dateTime={post.date_iso}>{post.date}</time>
+                {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
+              </p>
               <h3>
                 <Link className="card-link" to={`/blog/${post.slug}`}>
                   {post.title}

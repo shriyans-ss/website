@@ -1032,3 +1032,123 @@ img {
     transform: none;
   }
 }
+
+/* ==========================================================================
+   About
+   ========================================================================== */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+/* Without a photo the bio should not sit in a narrow orphaned column. */
+.about-layout:not(:has(.about-photo)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.about-photo {
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-body {
+  display: grid;
+  gap: 1.15rem;
+  justify-items: start;
+  max-width: var(--measure);
+  color: var(--text);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.about-affiliation {
+  color: var(--muted);
+}
+
+.about-now {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1rem 1.15rem;
+  width: 100%;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 720px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-photo {
+    max-width: 200px;
+  }
+}
+
+/* ==========================================================================
+   Draft state
+   Drafts render only in local development; these markers make that obvious
+   at a glance so an unfinished post is never mistaken for a published one.
+   ========================================================================== */
+
+.draft-badge {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #8a5300;
+  background: rgba(214, 158, 46, 0.16);
+  border: 1px solid rgba(214, 158, 46, 0.45);
+  vertical-align: middle;
+}
+
+.draft-notice {
+  max-width: var(--measure);
+  margin-top: 1rem;
+  padding: 0.85rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #8a5300;
+  background: rgba(214, 158, 46, 0.1);
+  border: 1px solid rgba(214, 158, 46, 0.35);
+}
+
+@media (prefers-color-scheme: dark) {
+  .draft-badge,
+  .draft-notice {
+    color: #f0c674;
+    background: rgba(214, 158, 46, 0.14);
+    border-color: rgba(214, 158, 46, 0.4);
+  }
+}
+
+.post-affiliation {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.post-advisors {
+  color: var(--faint);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: var(--measure);
+}
+
+.post-advisors-label {
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  font-size: 0.74rem;
+}

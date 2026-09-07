@@ -1,0 +1,21 @@
+# Site-level identity and contact details.
+# Anything left blank is simply not rendered — no placeholder or dead link ships.
+
+name: "Shriyans Shindadkar"
+tagline: "Neuroscience & robotics."
+
+# The public URL this site is deployed at, e.g. "https://shriyanss.github.io/website".
+# Needed for canonical/Open Graph tags and sitemap.xml.
+url: "https://shriyans-ss.github.io/website/"
+
+# Contact. Fill in whichever you want public; leave the rest empty.
+email: "shriyanss.shindadkar@gmail.com"
+github: ""
+linkedin: ""
+scholar: ""
+orcid: ""
+
+# Home page hero. `headline` is the large line; `intro` is the paragraph under it.
+hero:
+  headline: "Growing one task at a time, chasing an endless path contingent on fate."
+  intro: ""

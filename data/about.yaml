@@ -1,0 +1,21 @@
+# About page content.
+# While `bio` is empty the About page and its nav link stay hidden entirely,
+# so an unfinished page never ships.
+
+# Short headline under your name, e.g. "High school researcher, Seattle WA".
+subtitle: ""
+
+# One paragraph per list item. 3-4 sentences total is plenty.
+bio: []
+
+# Optional: where you study / work.
+affiliation: ""
+
+# Optional: a photo placed in public/ (e.g. "portrait.jpg"), and a CV link.
+photo: ""
+cv: ""
+
+# Optional: a dated one-liner on what you're working on right now.
+now:
+  date: ""
+  text: ""

@@ -3,6 +3,7 @@
 # Use 'slug' (optional) for creating internal blog post pages
 - title: "A Bibliometric Analysis of Top-Cited Studies on Graph Theory–Based Resting-State fMRI in ADHD and Generalized Anxiety Disorder"
   date: "March 2026"
+  date_iso: "2026-03-01"
   excerpt: "A collaboration examining the contribution and current direction of graph theory–based resting-state fMRI in ADHD and generalized anxiety disorder through bibliometric analysis of top 100 most cited papers."
   slug: "bibliometric-graph-theory-fmri-adhd-gad"
   imageDir: "/blog/bibliometric-graph-theory-fmri-adhd-gad/images"
@@ -12,6 +13,7 @@
     - "S.Chen"
     - "V.Bommisetty"
     - "M.Srivastava"
+    - "S.Shindadkar"
     - "T.Sriram"
     - "H.Dilip"
     - "Z.Nasir"
@@ -59,12 +61,14 @@
     - "Latifi, S., & Carmichael, S. T. (2024). The emergence of multiscale connectomics-based approaches in stroke recovery. Trends in Neurosciences, 47(4), 303–318. https://doi.org/10.1016/j.tins.2024.01.003"
 - title: "Vascular Dysfunction Accelerates Aβ–Tau Interactions in Alzheimer's Disease: A Blog Post"
   date: "May 2026"
+  date_iso: "2026-05-01"
   excerpt: "A cross-modal meta-analysis of 100+ high-impact studies reveals cerebrovascular pathways driving neurodegeneration in Alzheimer's disease."
   slug: "vascular-dysfunction-ab-tau-alzheimers"
-  imageDir: "vascular-figures"
+  imageDir: "/blog/vascular-dysfunction-ab-tau-alzheimers/images"
   authors:
     - "Ali Soliman"
     - "Vivaan Shah"
+    - "Shriyans Shindadkar"
     - "Pratika Thalluri"
     - "Haidar Alkhafaf"
     - "Arihant Jain"
@@ -123,11 +127,11 @@
       alt: "Bibliometric workflow visualization"
       caption: "Workflow: Literature Search → Screening → Keyword Extraction → Network Mapping → Citation Analysis → Visualization"
     - type: figure
-      image: "figure1.2.jpg"
+      image: "figure1.jpg"
       alt: "Senior author citation counts"
       caption: "Figure 1: Senior Author Citation Counts (WoS Core)"
     - type: figure
-      image: "figure2.2.jpg"
+      image: "figure2.jpg"
       alt: "Journals with top 100 papers"
       caption: "Figure 2: Journals with top 100 papers"
     - type: heading
@@ -147,3 +151,99 @@
         - "BBB disruption and small-vessel disease amplify downstream structural decline"
         - "Targeting vascular integrity may slow or alter the trajectory of AD pathology"
         - "Cardiovascular risk factors remain potent, modifiable drivers of long-term outcome"
+  references:
+    - "Banerjee, G., et al. (2023). Dynamic Changes of CSF sPDGFRβ during Ageing and Alzheimer’s Disease Progression."
+    - "Boutajangout, A., et al. (2011). Passive immunization targeting pathological phospho-tau protein reduces functional decline and clears tau aggregates."
+    - "Busciglio, J., et al. (1995). Beta-amyloid fibrils induce tau phosphorylation and loss of microtubule binding."
+    - "Caillet-Boudin, M. L., et al. (2015). Regulation of human MAPT gene expression."
+    - "Chien, D. T., et al. (2013). Early clinical PET imaging results with the novel PHF-Tau radioligand [F-18]-T807."
+    - "Harrison, T. M., et al. (2024). Tau mediates the impact of amyloid and vascular burden on symptom trajectory. Nature Medicine."
+    - "Iadecola, C. (2013). The pathobiology of vascular contributions to cognitive impairment and dementia."
+    - "Iliff, J. J., et al. (2014). Impairment of glymphatic pathway function promotes tau pathology after traumatic brain injury."
+    - "Iturria-Medina, Y., et al. (2016). Early role of vascular dysregulation in late-onset Alzheimer’s disease. Nature Communications."
+    - "Johnson, V. E., et al. (2012). Widespread tau and amyloid-beta pathology many years after a single TBI."
+    - "Kramer, J. H., et al. (2024). Tau, atrophy, and domain-specific impairment in typical Alzheimer’s disease."
+    - "Lasagna-Reeves, C. A., et al. (2011). Tau oligomers impair memory and mitochondrial function in wild-type mice."
+    - "Leyns, C. E. G., & Holtzman, D. M. (2017). Glial contributions to neurodegeneration in tauopathies."
+    - "Montagne, A., et al. (2015). Blood-brain barrier breakdown in the aging human hippocampus."
+    - "Nation, D. A., et al. (2019). BBB breakdown as an early biomarker of cognitive dysfunction. Nature Medicine."
+    - "Neary, D., et al. (2022). Tau mediates synergistic influence of vascular risk and amyloid on cognitive decline. Neurology."
+    - "Rabinovici, G. D., et al. (2019). Amyloid and tau imaging in Alzheimer’s disease: Advances and future directions."
+    - "Shi, Y., et al. (2021). Interaction between AD and cerebral small vessel disease."
+    - "Sweeney, M. D., et al. (2019). Vascular dysfunction—The overlooked partner in Alzheimer’s disease."
+    - "Villemagne, V. L., et al. (2015). Tau imaging: Early progress and future directions. The Lancet Neurology."
+    - "Zheng, W. H., et al. (2002). Amyloid β induces tau phosphorylation and cholinergic neuron loss."
+    - "Zlokovic, B. V. (2011). Neurovascular pathways to neurodegeneration."
+
+- title: Associating Functional Connectivity with White Matter Microstructural Complexity in Autism Spectrum Disorder
+  date: September 2026
+  date_iso: '2026-09-06'
+  slug: functional-connectivity-white-matter-microstructure-asd
+  status: draft
+  imageDir: /blog/functional-connectivity-white-matter-microstructure-asd/images
+  excerpt: A proposed observational case-control study pairing resting-state fMRI with diffusion kurtosis imaging in the Healthy Brain Network cohort, to test whether white matter microstructural complexity tracks functional connectivity in Autism Spectrum Disorder.
+  authors:
+  - Shriyans Shindadkar
+  advisors:
+  - Diya Nair
+  - Amit Zalman
+  - Abby Xiong
+  - Arjun Gambhir
+  - Kirsten Labarda
+  - Laylah Wolf
+  - Shriya Uttamchandani
+  - Suah Lee
+  affiliation: Mission San Jose High School
+  tags:
+  - Autism Spectrum Disorder
+  - Functional Connectivity
+  - Diffusion Kurtosis Imaging
+  - White Matter
+  - Resting-State fMRI
+  - Multimodal Neuroimaging
+  - Healthy Brain Network
+  sections:
+  - type: heading
+    text: Abstract
+  - type: paragraph
+    text: Autism Spectrum Disorder has commonly been associated with differences in both functional connectivity and white matter organization, but the relationship between these features remains unclear. This paper proposes an observational case-control analysis using resting-state functional MRI and multi-shell diffusion MRI from the Healthy Brain Network (HBN) to explore associations between functional connectivity and diffusion-kurtosis measurements in participants with Autism Spectrum Disorder and neurotypical controls. Diffusion-kurtosis imaging is an advanced MRI technique that measures the non-Gaussian diffusion of water molecules. These measurements help provide detailed insights into the microstructural complexity within brain tissue. Because the required participant-level phenotype data were not available at the time of analysis, findings from a comparable multimodal study by Nagai et al. (2024) were used to illustrate the types of relationships that the proposed methodology and analysis may identify. The comparison study reported both increased and decreased functional connectivity, as well as elevated axial and mean kurtosis in several white matter tracts. Furthermore, the study reported strong negative associations between mean kurtosis and functional connectivity, with correlation coefficients ranging from -0.72 to -0.86 and p-values of 0.001 or lower. Increased axial kurtosis values suggested that water diffusion along the primary direction of white matter fibers was more restricted or abnormal, potentially reflecting differences in their microstructural organization. While diffusion-kurtosis measurements effectively capture fine microstructural changes, they cannot provide an independent diagnostic marker or identify a specific biological cause. Ultimately, the findings suggest that utilizing both functional MRI and diffusion kurtosis imaging may explain the relationship between white matter microstructure and functional connectivity in Autism Spectrum Disorder.
+  - type: heading
+    text: Introduction
+  - type: paragraph
+    text: 'Autism Spectrum Disorder (ASD) is increasingly viewed not solely as a developmental disorder, but as a complex neurodevelopmental syndrome characterized by abnormal neural connectivity within the brain. To investigate this disorder, advanced neuroimaging techniques such as resting-state fMRI can measure functional connectivity among brain regions: the degree to which Blood-Oxygen-Level-Dependent (BOLD) signals fluctuate together across brain regions. New techniques, such as Diffusion Kurtosis Imaging (DKI), when combined with resting-state fMRI, have proven useful for evaluating the microstructural integrity of underlying white matter tracts in the brain. This complex dual-imaging approach is particularly useful for adolescent ASD patients, who are within a critical developmental window in which extensive abnormalities in brain development lead to atypical maturation or a prolonged presence of irregular connections. By linking the brain''s microstructural complexity to atypical connections, this research provides a crucial framework for evaluating how early connectivity issues might lay the foundation for the reinforcement of altered neural trajectories over a patient''s life. However, there is a lack of real-world data using adolescent, adult, and older patient cohorts with these methods, along with the recurring issue of accounting for head-moving artifacts in scans, disrupting both fMRI and DKI metrics and data. It is worth noting that the findings discussed later in this paper come from a study of adults, whereas this proposal’s stated focus is the adolescent developmental window; this age mismatch is an important limitation addressed further below.'
+  - type: heading
+    text: Materials and Methods
+  - type: paragraph
+    text: This study aims to implement an observational case-control design to investigate and analyze functional and white matter connectivity irregularities among individuals with Autism Spectrum Disorder. Participants with ASD will be recruited and compared to typically developing control patients. Data will mainly be obtained from the Healthy Brain Network Dataset, which includes resting-state fMRI, diffusion-weighted MRI, structural MRI, and individual participant data. Participants will only be included in this study if they have a documented diagnostic classification and T1-weighted, resting-state fMRI, and multishell diffusion MRI data (Alexander et al., 2017). Participants with missing image data, incompatible diffusion scans, significant neurological conditions, excessive head motion artifacts, and failed image-quality checks will be disqualified from the usable dataset (Alexander et al., 2017; Esteban et al., 2019; Cieslak et al., 2021). Patient demographics, including age, sex, and IQ, along with other factors such as imaging sites and head-motion measurements, will be documented as study variables.
+  - type: paragraph
+    text: The imaging files will first be organized and checked using the Brain Imaging Data Structure format. Resting-state fMRI data from applicable patients will be preprocessed by fMRI-Prep (Esteban et al., 2019). This data preprocessing will correct motion and distortion if present, align the functional scans with their anatomical counterparts, and format the images to standard brain space. Volumes exceeding the framewise displacement above the selected threshold will be scrubbed, and patients with an insufficient usable scan duration will be excluded (Alexander et al., 2017; Esteban et al., 2019). The preprocessed brain will be divided into sections using a standardized anatomical or functional atlas as reference (Matkovič et al., 2023). Mean Blood-Oxygen-Level-Dependent (BOLD) signal time will be extracted from each region. Pearson correlations will be calculated between regional time series to create a functional-connectivity matrix for each participant (Ahmadi et al., 2023; Jin et al., 2025). Correlation values will be transformed using Fisher's r-to-z transformation before statistical analysis (White et al., 2022).
+  - type: paragraph
+    text: Diffusion MRI data will be processed using existing QSIPrep derivatives or a fixed QSIPrep workflow (Cieslak et al., 2021). Diffusion Kurtosis models will be fitted using Diffusion Imaging in Python (DIPY), a well-established open-source neuroinformatics library (Henriques et al., 2021). Mean kurtosis, axial kurtosis, radial kurtosis, and mean diffusivity maps will be generated as a result of the model fitting. The resulting images will undergo both automated and manual quality control inspections. Mean diffusion metrics will be derived from predefined white matter tracts (Aja-Fernández et al., 2018; Henriques et al., 2021). Differences between the ASD and control groups will be tested using regression models that account for age, sex, IQ, imaging site, and head motion. Multimodal analyses will test whether white matter diffusion measurements are associated with functional connectivity strength. Multiple comparisons across functional connections and white matter regions will be controlled using the Benjamini-Hochberg false discovery rate procedure (White et al., 2022; Alexander et al., 2017). This method intends to reduce the expected proportion of false-positive findings while accounting for the intertwined structure of connectivity measurements. By matching the core analytical design of Nagai et al. (2024), combining microstructural metrics with fMRI functional matrices, this methodology is designed to identify the same underlying patterns of altered axonal complexity and functional dysconnectivity between brain regions. All software versions, exclusion decisions, preprocessing settings, and analysis parameters utilized during the study will be recorded to support reproducibility (Cieslak et al., 2021; Esteban et al., 2019).
+  - type: heading
+    text: Results
+  - type: paragraph
+    text: Since this is a study proposal, no participant data have been collected. The results below are drawn entirely from a previously published multimodal study by Nagai et al. (2024) and are presented only to demonstrate the types of relationships the proposed Healthy Brain Network analysis might reveal, not as findings of this current study. Nagai et al. analyzed resting-state fMRI data from 33 adults with Autism Spectrum Disorder (ASD) and 33 healthy controls. Diffusion-kurtosis data were available for a smaller group of 18 participants with Autism Spectrum Disorder and 17 controls. The functional analysis showed reduced connectivity between the right frontal pole and the left temporal fusiform cortices in the ASD group. Increased connectivity was also observed between the right thalamus and the bilateral inferior division of the lateral occipital cortex, as well as between the cerebellar vermis and several other occipital regions (Nagai et al., 2024). These findings suggest that ASD may involve a mixed pattern of reduced and increased connectivity rather than a uniform reduction in communication across the brain. The diffusion analysis also identified significantly higher axial kurtosis values in white matter regions such as the right anterior corona radiata and forceps minor. Mean axial kurtosis in this cluster was 1.23 ± 0.03 in participants with ASD and 1.19 ± 0.07 in controls, producing a p = 0.037 and Cohen’s d = 0.76 (Nagai et al., 2024). To elaborate, Cohen’s d is a quantitative measurement for the size of the mean difference between the two groups, and a p-value indicates how incompatible the observed data are with the base model. A second significant cluster involving the right superior longitudinal fasciculus had mean values of 1.18 ± 0.04 in the ASD group and 1.14 ± 0.05 in the control group, with p = 0.047 and Cohen’s d = 0.72 (Nagai et al., 2024). These medium-to-large effect sizes suggest that kurtosis measurements may detect meaningful differences in white matter despite a small sample size. Mean kurtosis was also greater in a cluster containing the right anterior corona radiata, anterior internal capsule, and anterior thalamic radiation, although the region-level comparison did not reach significance, p = 0.082. No significant group differences were observed for other quantitative values, including mean diffusivity, axial diffusivity, or radial kurtosis (Nagai et al., 2024). This result suggests that DKI may identify aspects of tissue complexity that are not detected by standard diffusion-tensor measurements.
+  - type: paragraph
+    text: Furthermore, the multimodal analysis discovered strong negative relationships between mean kurtosis and connectivity between the cerebellar vermis and right occipital fusiform gyrus. Across four separate white matter clusters, the reported correlation coefficients were r = -0.86, -0.81, -0.72, and -0.82, with p-values of 0.001 or lower (Nagai et al., 2024). These negative correlations indicate that greater kurtosis abnormalities were associated with lower functional coordination between the examined brain regions. Together, the functional and diffusion findings support the hypothesis that altered white matter microstructure contributes to hindered communication between distant brain regions in ASD. The study may have succeeded because it combined complementary imaging methods and tested structural and functional measurements within the same participant cohorts. However, Nagai et al.’s study had a small adult DKI sample, which greatly limits the circumstances under which the findings can be generalized to children and adolescents. The proposed Healthy Brain Network study may yield different measurements due to the inclusion of a younger and more clinically diverse population. Despite these limitations, similar findings in the HBN sample would strengthen the connection between altered connectivity and white matter microstructure in ASD.
+  - type: heading
+    text: Conclusion
+  - type: paragraph
+    text: Since the required participant brain scans and metadata were unavailable, this proposal uses Nagai et al.’s (2024) results to illustrate the relationships the study means to investigate. Nevertheless, the predicted results suggest that Autism Spectrum Disorder may involve both functional-connectivity differences and alterations in white matter microstructure. This hypothesis is further supported by the fact that Nagai et al.’s study reported group differences in axial kurtosis, along with altered functional connectivity patterns, in patients with ASD. These reports suggest that diffusion-kurtosis imaging may detect tissue changes that are not captured by conventional diffusion measurements alone. In this particular context, higher kurtosis values may reflect more restricted or complex water diffusion within white matter, also suggesting the particular brain region’s microstructural complexity. Moreover, the relationships between these measurements suggest that differences in white matter organization are associated with altered coordination between certain brain regions (Nagai et al., 2024).
+  - type: paragraph
+    text: Although the reported effect sizes indicated meaningful group differences, the small adult-only cohort and uncorrected p-values warrant careful consideration. Head-motion artifacts, missing data, and multiple-comparison correction may also reduce the number of significant results. Nevertheless, the findings support the use of combined function and diffusion imaging to fully grasp the complex and variable neurological characteristics associated with Autism Spectrum Disorder.
+  references:
+  - 'Aja-Fernández, Santiago, et al. "Scalar Diffusion-MRI Measures Invariant to Acquisition Parameters: A First Step towards Imaging Biomarkers." Magnetic Resonance Imaging, vol. 54, 2018, pp. 194–213, https://doi.org/10.1016/j.mri.2018.03.001.'
+  - 'Ahmadi, Hessam, et al. "A Comparative Study of Correlation Methods in Functional Connectivity Analysis Using fMRI Data of Alzheimer''s Patients." Journal of Biomedical Physics and Engineering, vol. 13, no. 2, 2023, pp. 125–34, https://doi.org/10.31661/jbpe.v0i0.2007-1134.'
+  - 'Alexander, Lindsay M., et al. "An Open Resource for Transdiagnostic Research in Pediatric Mental Health and Learning Disorders." Scientific Data, vol. 4, 2017, article 170181, https://doi.org/10.1038/sdata.2017.181.'
+  - 'Benjamini, Yoav, and Yosef Hochberg. "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing." Journal of the Royal Statistical Society: Series B (Methodological), vol. 57, no. 1, 1995, pp. 289–300, https://doi.org/10.1111/j.2517-6161.1995.tb02031.x.'
+  - 'Child Mind Institute. "Healthy Brain Network." Healthy Brain Network Data Portal, https://data.healthybrainnetwork.org/main.php. Accessed 2 Aug. 2026.'
+  - 'Cieslak, Matthew, et al. "QSIPrep: An Integrative Platform for Preprocessing and Reconstructing Diffusion MRI Data." Nature Methods, vol. 18, 2021, pp. 775–78, https://doi.org/10.1038/s41592-021-01185-5.'
+  - 'Esteban, Oscar, et al. "fMRIPrep: A Robust Preprocessing Pipeline for Functional MRI." Nature Methods, vol. 16, no. 1, 2019, pp. 111–16, https://doi.org/10.1038/s41592-018-0235-4.'
+  - 'Healthy Brain and Child Development Study. "Diffusion MRI (dMRI)." HBCD Data Release Docs, updated 18 May 2026, https://docs.hbcdstudy.org/latest/instruments/mri/dmri/. Accessed 2 Aug. 2026.'
+  - 'Henriques, Rafael Neto, et al. "Diffusional Kurtosis Imaging in the Diffusion Imaging in Python Project." Frontiers in Human Neuroscience, vol. 15, 2021, article 675433, https://doi.org/10.3389/fnhum.2021.675433.'
+  - 'Jin, Hecheng, et al. "Is Pearson''s Correlation Coefficient Enough for Functional Connectivity in fMRI?" Imaging Neuroscience, vol. 3, 2025, https://doi.org/10.1162/IMAG.a.1052.'
+  - 'Matkovič, Andraž, et al. "Static and Dynamic fMRI-Derived Functional Connectomes Represent Largely Similar Information." Network Neuroscience, vol. 7, no. 4, 2023, pp. 1266–1301, https://doi.org/10.1162/netn_a_00325.'
+  - 'Nagai, Yasuhito, et al. "Functional Connectivity in Autism Spectrum Disorder Evaluated Using rs-fMRI and DKI." Cerebral Cortex, vol. 34, no. 13, 2024, pp. 129–45, https://doi.org/10.1093/cercor/bhad451.'
+  - 'NiPreps. "fMRIPrep: A Robust Preprocessing Pipeline for fMRI Data." fMRIPrep Documentation, https://fmriprep.org/en/stable/. Accessed 2 Aug. 2026.'
+  - '"QSIPrep: Preprocessing and Analysis of Q-Space Images." QSIPrep Documentation, Read the Docs, https://qsiprep.readthedocs.io/en/latest/. Accessed 2 Aug. 2026.'
+  - 'White, Brian R., et al. "Statistical Approaches to Temporal and Spatial Autocorrelation in Resting-State Functional Connectivity in Mice Measured with Optical Intrinsic Signal Imaging." Neurophotonics, vol. 9, no. 4, 2022, article 041405, https://doi.org/10.1117/1.NPh.9.4.041405.'

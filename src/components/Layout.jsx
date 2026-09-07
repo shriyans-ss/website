@@ -5,16 +5,19 @@ import Books from "../pages/Books.jsx";
 import Blog from "../pages/Blog.jsx";
 import BlogPost from "../pages/BlogPost.jsx";
 import Interests from "../pages/Interests.jsx";
+import About from "../pages/About.jsx";
 import NotFound from "../pages/NotFound.jsx";
 import Footer from "./Footer.jsx";
-import { blogPosts, interests } from "../data.js";
+import { blogPosts, hasAbout, interests } from "../data.js";
 
+// About only appears in the nav once data/about.yaml actually has a bio.
 const navLinks = [
   { to: "/", label: "Home" },
+  hasAbout ? { to: "/about", label: "About" } : null,
   { to: "/books", label: "Books" },
   { to: "/blog", label: "Blog" },
   { to: "/interests", label: "Interests" }
-];
+].filter(Boolean);
 
 const brandImage = "site-logo.png";
 
@@ -94,6 +97,7 @@ export default function Layout() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/interests" element={<Interests />} />
+            {hasAbout ? <Route path="/about" element={<About />} /> : null}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
