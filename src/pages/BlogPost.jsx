@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useViewTransitionState } from "react-router-dom";
 import { blogPosts, isDraft } from "../data.js";
 
 function Figure({ src, alt, caption }) {
@@ -57,6 +57,10 @@ function Section({ section, imageBasePath }) {
 
 export default function BlogPost() {
   const { slug } = useParams();
+  // Matches the name the originating card carries, so the heading tweens into
+  // place instead of appearing. Called before the not-found early return to
+  // keep the hook order stable.
+  const isTransitioning = useViewTransitionState(`/blog/${slug}`);
   const post = blogPosts.find((item) => item.slug === slug);
   const rawBase = post?.imageDir || (post?.slug ? `blog/${post.slug}/images` : "");
   // Strip any leading slash so assets resolve against Vite's relative base ("./"),
@@ -71,7 +75,7 @@ export default function BlogPost() {
           <p className="section-subtitle">
             That post is not available yet. Check the full list instead.
           </p>
-          <Link className="text-link" to="/blog">
+          <Link className="text-link" viewTransition to="/blog">
             Back to the blog
           </Link>
         </section>
@@ -82,16 +86,18 @@ export default function BlogPost() {
   return (
     <div className="page-content">
       <article className="section">
-        <Link className="text-link back-link" to="/blog">
+        <Link className="text-link back-link" viewTransition to="/blog">
           Back to the blog
         </Link>
         <div className="post-header">
           <p className="card-meta">
             <time dateTime={post.date_iso}>{post.date}</time>
-            {post.kind ? <span className="kind-label" data-kind={post.kind}>{post.kind}</span> : null}
             {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
           </p>
-          <h1>{post.title}</h1>
+          <h1 style={isTransitioning ? { viewTransitionName: "post-title" } : undefined}>
+            {post.title}
+          </h1>
+          {post.kind ? <p className="post-kind">{post.kind}</p> : null}
           <p className="post-authors">{(post.authors || []).join(", ")}</p>
           {post.affiliation ? (
             <p className="post-affiliation">{post.affiliation}</p>

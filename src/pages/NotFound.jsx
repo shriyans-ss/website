@@ -11,10 +11,10 @@ export default function NotFound() {
           That page doesn't exist. Try the blog, the bookshelf, or head back home.
         </p>
         <div className="hero-actions">
-          <Link className="btn primary" to="/">
+          <Link className="btn primary" viewTransition to="/">
             Back home
           </Link>
-          <Link className="btn ghost" to="/blog">
+          <Link className="btn ghost" viewTransition to="/blog">
             Read the blog
           </Link>
         </div>

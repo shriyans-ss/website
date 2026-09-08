@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PostTitleLink from "../components/PostTitleLink.jsx";
 import { blogPosts, interests, isDraft, site } from "../data.js";
 import Connectome from "../components/Connectome.jsx";
 
@@ -13,10 +14,10 @@ export default function Home() {
             <p className="hero-copy">{site.hero.intro}</p>
           ) : null}
           <div className="hero-actions">
-            <Link className="btn primary" to="/blog">
+            <Link className="btn primary" viewTransition to="/blog">
               Read the latest
             </Link>
-            <Link className="btn ghost" to="/books">
+            <Link className="btn ghost" viewTransition to="/books">
               Browse the shelf
             </Link>
           </div>
@@ -37,23 +38,22 @@ export default function Home() {
       <section className="section">
         <div className="section-header">
           <h2>Latest writing</h2>
-          <Link className="text-link" to="/blog">
+          <Link className="text-link" viewTransition to="/blog">
             View all posts
           </Link>
         </div>
         <div className="card-grid">
-          {blogPosts.slice(0, 3).map((post) => (
+          {blogPosts.slice(0, 1).map((post) => (
             <article key={post.slug || post.title} className="card">
               <p className="card-meta">
                 <time dateTime={post.date_iso}>{post.date}</time>
-              {post.kind ? <span className="kind-label" data-kind={post.kind}>{post.kind}</span> : null}
                 {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
               </p>
               <h3>
                 {post.slug ? (
-                  <Link className="card-link" to={`/blog/${post.slug}`}>
+                  <PostTitleLink to={`/blog/${post.slug}`}>
                     {post.title}
-                  </Link>
+                  </PostTitleLink>
                 ) : (
                   post.title
                 )}
@@ -74,7 +74,7 @@ export default function Home() {
       <section className="section">
         <div className="section-header">
           <h2>Signals and interests</h2>
-          <Link className="text-link" to="/interests">
+          <Link className="text-link" viewTransition to="/interests">
             Explore focus areas
           </Link>
         </div>

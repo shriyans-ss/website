@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import PostTitleLink from "../components/PostTitleLink.jsx";
 import { blogPosts, isDraft } from "../data.js";
 
 export default function Blog() {
@@ -14,13 +15,12 @@ export default function Blog() {
             <article key={post.title} className="card">
               <p className="card-meta">
                 <time dateTime={post.date_iso}>{post.date}</time>
-              {post.kind ? <span className="kind-label" data-kind={post.kind}>{post.kind}</span> : null}
                 {isDraft(post) ? <span className="draft-badge">Draft</span> : null}
               </p>
               <h3>
-                <Link className="card-link" to={`/blog/${post.slug}`}>
+                <PostTitleLink to={`/blog/${post.slug}`}>
                   {post.title}
-                </Link>
+                </PostTitleLink>
               </h3>
               <p className="card-text">{post.excerpt}</p>
               <div className="card-tags">
@@ -32,7 +32,7 @@ export default function Blog() {
               </div>
               <div className="card-footer">
                 <span>{(post.authors || []).join(", ")}</span>
-                <Link className="btn primary" to={`/blog/${post.slug}`}>
+                <Link className="btn primary" viewTransition to={`/blog/${post.slug}`}>
                   Read post
                 </Link>
               </div>

@@ -5,29 +5,29 @@
 
 :root {
   /* Surfaces */
-  --bg: #f4f2ed;
-  --bg-subtle: #eceae3;
+  --bg: #f6f4fa;
+  --bg-subtle: #edeaf5;
   --surface: #ffffff;
   --surface-raised: #ffffff;
 
   /* Ink */
-  --text: #16191d;
-  --text-strong: #0b0d10;
-  --muted: #5b636e;
-  --faint: #8b939e;
+  --text: #1a1721;
+  --text-strong: #0f0c16;
+  --muted: #5f5872;
+  --faint: #8d86a0;
 
   /* Brand accent */
-  --accent: #1d5b4a;
-  --accent-strong: #164439;
+  --accent: #5b3a94;
+  --accent-strong: #452a74;
   --accent-contrast: #ffffff;
-  --accent-wash: rgba(29, 91, 74, 0.08);
+  --accent-wash: rgba(91, 58, 148, 0.08);
 
   /* Lines & depth */
-  --stroke: rgba(22, 25, 29, 0.12);
-  --stroke-strong: rgba(22, 25, 29, 0.22);
-  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.04), 0 1px 3px rgba(16, 24, 40, 0.06);
-  --shadow-md: 0 4px 8px rgba(16, 24, 40, 0.04), 0 12px 24px rgba(16, 24, 40, 0.08);
-  --shadow-lg: 0 8px 16px rgba(16, 24, 40, 0.06), 0 24px 48px rgba(16, 24, 40, 0.12);
+  --stroke: rgba(26, 23, 33, 0.12);
+  --stroke-strong: rgba(26, 23, 33, 0.22);
+  --shadow-sm: 0 1px 2px rgba(35, 22, 58, 0.05), 0 1px 3px rgba(35, 22, 58, 0.07);
+  --shadow-md: 0 4px 8px rgba(35, 22, 58, 0.05), 0 12px 24px rgba(35, 22, 58, 0.09);
+  --shadow-lg: 0 8px 16px rgba(35, 22, 58, 0.07), 0 24px 48px rgba(35, 22, 58, 0.13);
 
   /* Type */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -52,23 +52,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #12151a;
-    --bg-subtle: #171b21;
-    --surface: #1a1f26;
-    --surface-raised: #1f252d;
+    --bg: #131019;
+    --bg-subtle: #191522;
+    --surface: #1d1828;
+    --surface-raised: #241e31;
 
-    --text: #e7eaee;
-    --text-strong: #f7f9fa;
-    --muted: #a2abb7;
-    --faint: #79828e;
+    --text: #e9e5f0;
+    --text-strong: #f8f6fb;
+    --muted: #a9a1bd;
+    --faint: #7e7694;
 
-    --accent: #7fd1b9;
-    --accent-strong: #a5e3d0;
-    --accent-contrast: #0d1712;
-    --accent-wash: rgba(127, 209, 185, 0.12);
+    --accent: #c3a4f2;
+    --accent-strong: #dbc8fb;
+    --accent-contrast: #1b1026;
+    --accent-wash: rgba(195, 164, 242, 0.14);
 
-    --stroke: rgba(231, 234, 238, 0.14);
-    --stroke-strong: rgba(231, 234, 238, 0.28);
+    --stroke: rgba(233, 229, 240, 0.14);
+    --stroke-strong: rgba(233, 229, 240, 0.28);
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.34), 0 12px 24px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.38), 0 24px 48px rgba(0, 0, 0, 0.48);
@@ -305,47 +305,6 @@ img {
 }
 
 /* ==========================================================================
-   Ticker
-   ========================================================================== */
-
-.flow-ticker {
-  border-top: 1px solid var(--stroke);
-  border-bottom: 1px solid var(--stroke);
-  overflow: hidden;
-  padding: 0.55rem 0;
-  margin: 0 0 3rem;
-  /* Fade the marquee out at both edges instead of hard-cutting it. */
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent,
-    #000 8%,
-    #000 92%,
-    transparent
-  );
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-}
-
-.ticker-track {
-  display: flex;
-  gap: 2.5rem;
-  width: max-content;
-  animation: ticker 46s linear infinite;
-}
-
-.flow-ticker:hover .ticker-track {
-  animation-play-state: paused;
-}
-
-.ticker-item {
-  text-transform: uppercase;
-  letter-spacing: 0.26em;
-  font-size: 0.66rem;
-  font-weight: 500;
-  color: var(--faint);
-  white-space: nowrap;
-}
-
-/* ==========================================================================
    Page transitions
    ========================================================================== */
 
@@ -356,6 +315,66 @@ img {
 
 .page {
   animation: fadeSlide var(--dur-slow) var(--ease-out) both;
+}
+
+/* ==========================================================================
+   View transitions
+
+   The data router calls document.startViewTransition on navigation. Naming the
+   persistent chrome pulls it out of the "root" snapshot, so the header and
+   footer hold still while only the page body crosses over — that is what
+   makes the change read as one continuous surface rather than a page swap.
+
+   Browsers without the API ignore all of this and keep the .page fadeSlide
+   above; browsers with it get the richer transition and skip fadeSlide, which
+   would otherwise double up with the crossfade.
+   ========================================================================== */
+
+@supports (view-transition-name: none) {
+  .page {
+    animation: none;
+  }
+
+  .site-header {
+    view-transition-name: site-header;
+  }
+
+  .site-footer {
+    view-transition-name: site-footer;
+  }
+
+  ::view-transition-old(root) {
+    animation: vt-leave var(--dur) var(--ease) both;
+  }
+
+  ::view-transition-new(root) {
+    animation: vt-enter var(--dur-slow) var(--ease-out) both;
+  }
+
+  /* A post title morphs out of the card that opened it. Both snapshots carry
+     the same name, so the browser tweens position, size and font between the
+     card heading and the article headline. */
+  ::view-transition-old(post-title),
+  ::view-transition-new(post-title) {
+    animation: none;
+    mix-blend-mode: normal;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@keyframes vt-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes vt-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
 }
 
 @keyframes fadeSlide {
@@ -1004,15 +1023,6 @@ img {
   }
 }
 
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
 /* ==========================================================================
    Reduced motion — disable every animation and transition, including the
    marquee and smooth scrolling.
@@ -1023,6 +1033,22 @@ img {
     scroll-behavior: auto;
   }
 
+  /* The universal selector below does not reach view-transition pseudo-elements,
+     so they need cutting separately or the page would still slide. The named
+     rule is a fallback for engines that reject the `*` form. */
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root),
+  ::view-transition-old(post-title),
+  ::view-transition-new(post-title) {
+    animation: none !important;
+  }
+
   *,
   *::before,
   *::after {
@@ -1030,11 +1056,6 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
-  }
-
-  .ticker-track {
-    animation: none;
-    transform: none;
   }
 }
 
@@ -1288,29 +1309,10 @@ img {
    distinguishable at a glance on a mixed index.
    ========================================================================== */
 
-.kind-label {
-  --kind: var(--accent);
-  padding: 0.12rem 0.55rem;
-  border-left: none;
-  border-radius: var(--radius-pill);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--kind);
-  background: color-mix(in srgb, var(--kind) 12%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--kind) 38%, transparent);
-  white-space: nowrap;
-}
-
-.kind-label[data-kind="Research proposal"]     { --kind: #1d5b4a; }
-.kind-label[data-kind="Bibliometric analysis"] { --kind: #1f5f7a; }
-.kind-label[data-kind="Literature review"]     { --kind: #6a4a86; }
-
-@media (prefers-color-scheme: dark) {
-  .kind-label[data-kind="Research proposal"]     { --kind: #6fd3b2; }
-  .kind-label[data-kind="Bibliometric analysis"] { --kind: #6fc2e0; }
-  .kind-label[data-kind="Literature review"]     { --kind: #c1a3e0; }
+.post-kind {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
 }
 
 /* The global reduced-motion rule freezes the graph mid-keyframe; pin it to a

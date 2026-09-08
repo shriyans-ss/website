@@ -1,14 +1,7 @@
 import { useEffect, useState } from "react";
-import { NavLink, Route, Routes, useLocation } from "react-router-dom";
-import Home from "../pages/Home.jsx";
-import Books from "../pages/Books.jsx";
-import Blog from "../pages/Blog.jsx";
-import BlogPost from "../pages/BlogPost.jsx";
-import Interests from "../pages/Interests.jsx";
-import About from "../pages/About.jsx";
-import NotFound from "../pages/NotFound.jsx";
+import { NavLink, Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer.jsx";
-import { blogPosts, hasAbout, interests } from "../data.js";
+import { hasAbout } from "../data.js";
 
 // About only appears in the nav once data/about.yaml actually has a bio.
 const navLinks = [
@@ -20,19 +13,6 @@ const navLinks = [
 ].filter(Boolean);
 
 const brandImage = "site-logo.png";
-
-// The marquee reads from real content so it always reflects what is on the
-// site, rather than a hard-coded list that drifts out of date.
-const tickerTopics = Array.from(
-  new Set([
-    ...blogPosts.flatMap((post) => post.tags || []),
-    ...interests.map((interest) => interest.title)
-  ])
-);
-
-const tickerText = tickerTopics.length
-  ? `${tickerTopics.join(" / ")} / `
-  : "";
 
 export default function Layout() {
   const location = useLocation();
@@ -69,6 +49,7 @@ export default function Layout() {
             <NavLink
               key={link.to}
               to={link.to}
+              viewTransition
               className={({ isActive }) =>
                 isActive ? "nav-link active" : "nav-link"
               }
@@ -80,26 +61,9 @@ export default function Layout() {
         </nav>
       </header>
 
-      {tickerText ? (
-        <div className="flow-ticker" aria-hidden="true">
-          <div className="ticker-track">
-            <span className="ticker-item">{tickerText}</span>
-            <span className="ticker-item">{tickerText}</span>
-          </div>
-        </div>
-      ) : null}
-
       <main className="site-main" id="main">
         <div className="page" key={location.pathname}>
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/books" element={<Books />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/interests" element={<Interests />} />
-            {hasAbout ? <Route path="/about" element={<About />} /> : null}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Outlet />
         </div>
       </main>
 
